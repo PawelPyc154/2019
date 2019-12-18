@@ -3,12 +3,16 @@ import NavBar from "./layout/NavBar";
 import {BrowserRouter as Router} from "react-router-dom";
 import {createGlobalStyle} from "styled-components";
 import {style1, style1Type} from "./state/style/style1";
+import Pages from "./pages/Pages";
 
 const App: React.FC = () => {
   return (
     <Router>
       <GlobalStyle styled={style1} />
       <NavBar />
+      <main>
+        <Pages />
+      </main>
     </Router>
   );
 };

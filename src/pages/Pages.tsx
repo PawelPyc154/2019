@@ -1,6 +1,6 @@
 import React, {Suspense, lazy} from "react";
 import {Route, Switch} from "react-router";
-import About from "./home/About";
+import About from "./About";
 
 const Home = lazy(() => import("./home/Home"));
 export interface PagesProps {}

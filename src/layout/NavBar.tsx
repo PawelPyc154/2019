@@ -15,7 +15,6 @@ const NavBar: React.FC<NavBarProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [features, setFreatures] = useState(false);
   const [basketOpen, setBasketOpen] = useState(false);
-  console.log(basketOpen);
 
   return (
     <Header styled={style1}>
@@ -181,7 +180,7 @@ const Header = styled.header<style1Type>`
     & > ul {
       & > li:first-child {
         z-index: 1400;
-        background-color: white;
+        /* background-color: white; */
         letter-spacing: 2px;
         width: 100%;
         position: fixed;
@@ -192,6 +191,7 @@ const Header = styled.header<style1Type>`
         flex-direction: column;
         justify-content: space-evenly;
         transform: translateX(130%);
+        background-color: white;
         & > a {
           text-decoration: none;
         }
@@ -208,6 +208,7 @@ const Header = styled.header<style1Type>`
             width: 100%;
             border: none;
             font-size: 1.2em;
+            background-color: transparent;
             &::placeholder {
               color: #bbbdbf;
             }
@@ -289,6 +290,7 @@ const Header = styled.header<style1Type>`
           align-items: center;
           margin-right: 10px;
           transform: initial;
+          background-color: initial;
           & ol {
             margin: 0;
             & input {
