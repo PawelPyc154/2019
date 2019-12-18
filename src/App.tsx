@@ -2,11 +2,12 @@ import React from "react";
 import NavBar from "./layout/NavBar";
 import {BrowserRouter as Router} from "react-router-dom";
 import {createGlobalStyle} from "styled-components";
+import {style1, style1Type} from "./state/style/style1";
 
 const App: React.FC = () => {
   return (
     <Router>
-      <GlobalStyle />
+      <GlobalStyle styled={style1} />
       <NavBar />
     </Router>
   );
@@ -14,7 +15,7 @@ const App: React.FC = () => {
 
 export default App;
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<style1Type>`
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Pacifico&display=swap&subset=latin-ext" rel="stylesheet');
 
 *,*::after,*::before{
@@ -27,7 +28,15 @@ overflow-x:hidden;
   /* font-family: 'Pacifico', cursive; */
 font-family: 'Montserrat', sans-serif;
 font-size:10px;
+
+
 }
+
+.activeLink {
+    & > ol,li {
+      color: ${props => props.styled.nav.navActive} !important;
+    }
+  }
 
 
 `;
