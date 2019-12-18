@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing:border-box;
 }
 body{
-
+overflow-x:hidden;
   /* font-family: 'Pacifico', cursive; */
 font-family: 'Montserrat', sans-serif;
 font-size:10px;

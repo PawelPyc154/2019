@@ -18,14 +18,14 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({toggle}) => {
         <SpanChild
           variants={{
             open: {y: 0},
-            closed: {y: -10}
+            closed: {y: -7}
           }}
         ></SpanChild>
         <SpanChild></SpanChild>
         <SpanChild
           variants={{
             open: {y: 0, rotate: 90},
-            closed: {y: 10, rotate: 0}
+            closed: {y: 7, rotate: 0}
           }}
         ></SpanChild>
       </Span>
@@ -36,12 +36,13 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({toggle}) => {
 export default HamburgerMenu;
 
 const Button = styled.button`
-  top: 10px;
-  right: 5px;
+  display: flex;
+  /* top: 10px;
+  right: 10px; */
 
   height: 50px;
-  margin-right: 20px;
-  display: flex;
+  /* margin-right: 20px; */
+
   justify-content: center;
   align-items: center;
   flex-basis: 70px;
@@ -49,7 +50,6 @@ const Button = styled.button`
   cursor: pointer;
   background-color: transparent;
   /* background-color: red; */
-
   @media screen and (min-width: 1000px) {
     display: none;
   }
@@ -57,8 +57,8 @@ const Button = styled.button`
 
 const Span = styled(motion.span)`
   position: relative;
-  width: 30px;
-  height: 24px;
+  width: 18px;
+  height: 15px;
   /* background-color: blue; */
 `;
 
@@ -71,9 +71,10 @@ const SpanChild = styled(motion.span)`
   top: 50%;
 
   &:nth-child(1) {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
+
   &:nth-child(3) {
-    transform: translateY(10px);
+    transform: translateY(5px);
   }
 `;
