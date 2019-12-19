@@ -76,6 +76,7 @@ const Section = styled.section`
     background-color: white;
   }
   & > div:last-child {
+    max-height: 853px;
     width: 100%;
     display: grid;
     grid-template-rows: 1fr;
@@ -103,6 +104,7 @@ const Slider = styled(motion.div)<SliderProps>`
   grid-template-columns: 100vw 100vw 100vw;
   grid-template-rows: 1fr;
   overflow: hidden;
+  max-height: 853px;
   & > div {
     background-repeat: no-repeat;
     background-position: center;
@@ -142,6 +144,7 @@ const Content = styled.div<style1Type>`
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
+
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -150,6 +153,7 @@ const Content = styled.div<style1Type>`
     width: auto;
     max-width: 500px;
     margin: 0 0 20px 0;
+
     & > h3 {
       font-size: 2.8em;
       letter-spacing: 2px;

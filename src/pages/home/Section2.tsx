@@ -9,11 +9,11 @@ export interface Section2Props {}
 const Section2: React.SFC<Section2Props> = () => {
   return (
     <Section styled={style1}>
-      <div>
+      <figure>
         <img src={Layer_1} alt="" />
         <img src={Layer_3} alt="" />
-      </div>
-      <div>
+      </figure>
+      <article>
         <h2>about</h2>
         <span>WE CREATE DELICIOUS MEMORIES</span>
         <p>
@@ -28,7 +28,7 @@ const Section2: React.SFC<Section2Props> = () => {
           assumenda iste ipsam omnis hic dolore veniam nam animi rem magni.
         </p>
         <Link to="/about">...</Link>
-      </div>
+      </article>
     </Section>
   );
 };
@@ -40,7 +40,7 @@ const Section = styled.section<style1Type>`
   flex-direction: column;
   justify-content: center;
   padding: 40px 5px;
-  & > div:first-child {
+  & > figure {
     margin: 0 auto;
     padding: 20px 0px;
 
@@ -58,7 +58,7 @@ const Section = styled.section<style1Type>`
       width: 90%;
     }
   }
-  & > div:last-child {
+  & > article {
     margin: 0 auto;
     width: auto;
     max-width: 500px;
@@ -75,22 +75,23 @@ const Section = styled.section<style1Type>`
     }
     & > a {
       display: block;
-      font-size: 2em;
+      font-size: 2.5em;
       letter-spacing: 3px;
       padding: 20px 0 0 0;
+      color: #000;
     }
   }
   @media screen and (min-width: 550px) {
-    & > div:first-child {
+    & > figure {
       width: 500px;
     }
   }
   @media screen and (min-width: 1000px) {
     flex-direction: row;
-    & > div:first-child {
+    & > figure {
       margin: 0 50px;
     }
-    & > div:last-child {
+    & > article {
       margin: 0 50px;
       & > p {
         margin: 20px 0;
