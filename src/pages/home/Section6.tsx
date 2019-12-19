@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Layer_1 from "../../img/home/Layer_1.png";
-import Layer_3 from "../../img/home/Layer_3.png";
+import Layer_30 from "../../img/home/Layer_30.png";
+import Layer_31 from "../../img/home/Layer_31.png";
 import {Link} from "react-router-dom";
 import {style1, style1Type} from "../../state/style/style1";
 export interface Section2Props {}
@@ -10,24 +10,20 @@ const Section2: React.SFC<Section2Props> = () => {
   return (
     <Section styled={style1}>
       <figure>
-        <img src={Layer_1} alt="" />
-        <img src={Layer_3} alt="" />
+        <img src={Layer_30} alt="" />
+        <img src={Layer_31} alt="" />
       </figure>
       <article>
-        <h2>about</h2>
-        <span>WE CREATE DELICIOUS MEMORIES</span>
+        <h2>reservation</h2>
+        <span>BOOK YOUR TABLE AT OUR RESTAURANT NOW!</span>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
           consequatur, omnis soluta reprehenderit quidem totam perspiciatis
           excepturi quod iusto delectus numquam optio aliquam officia molestias
-          quasi earum! Officiis laudantium quod nihil hic soluta, rem, sapiente
-          tempore dignissimos pariatur totam, iure quos magnam id unde sint.
+          quasi earum! Officiis laudantium quod nihil hic soluta.
         </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          assumenda iste ipsam omnis hic dolore veniam nam animi rem magni.
-        </p>
-        <Link to="/about">...</Link>
+
+        <Link to="/reservation">...</Link>
       </article>
     </Section>
   );
@@ -39,7 +35,7 @@ const Section = styled.section<style1Type>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 5px;
+  padding: 20px 5px;
   & > figure {
     margin: 0 auto;
     padding: 20px 0px;
@@ -47,15 +43,16 @@ const Section = styled.section<style1Type>`
     display: flex;
     flex-direction: column;
     & > img:first-child {
-      align-self: flex-end;
+      align-self: flex-start;
       display: block;
-      width: 90%;
+      width: 80%;
     }
     & > img:last-child {
-      align-self: flex-start;
-      margin: -50px 0 0 0;
+      align-self: flex-end;
+      margin: -100px 0 0 0;
       display: block;
-      width: 90%;
+      width: 80%;
+      z-index: -1;
     }
   }
   & > article {
@@ -70,7 +67,6 @@ const Section = styled.section<style1Type>`
     & > span {
       color: ${props => props.styled.nav.navActive};
       letter-spacing: 3px;
-      font-size: 1.2em;
     }
     & > p {
       margin: 20px 0;

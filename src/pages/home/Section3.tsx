@@ -146,7 +146,7 @@ export default Section3;
 
 const Section = styled.section<style1Type>`
   padding: 5px;
-  height: 510px;
+  /* height: 510px; */
   display: flex;
   justify-content: center;
   & article {
@@ -214,14 +214,15 @@ const Section = styled.section<style1Type>`
         & > span {
           font-size: 2em;
           letter-spacing: 3px;
-          color: #dcdeed;
+          color: #babcc7;
           line-height: 2.4em;
         }
       }
     }
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1100px) {
+    padding: 70px 5px;
     & article {
       flex-direction: row;
       & > div:first-child {

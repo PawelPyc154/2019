@@ -54,6 +54,11 @@ img {
     font-weight: 400;
     letter-spacing:3px;
   }
+ h3 {
+    font-size:2em;
+    font-weight: 400;
+    letter-spacing:3px;
+  }
 p {
   font-size:1.2em;
   letter-spacing:1px;
@@ -68,6 +73,10 @@ a {
   h2 {
     font-size:5em;
 
+  }
+  h3 {
+    font-size:2.5em;
+ 
   }
 }
 `;

@@ -24,7 +24,7 @@ const Section2: React.SFC<Section2Props> = () => {
           tempore
         </p>
 
-        <Link to="/about">...</Link>
+        <Link to="/menu">...</Link>
       </article>
     </Section>
   );
@@ -36,7 +36,7 @@ const Section = styled.section<style1Type>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 5px;
+  padding: 20px 5px;
   & > figure {
     margin: 0 auto;
     padding: 20px 0px;
@@ -80,7 +80,7 @@ const Section = styled.section<style1Type>`
       display: block;
       font-size: 2.5em;
       letter-spacing: 3px;
-      padding: 20px 0 0 0;
+      padding: 0 0 0 0;
       color: #000;
       text-align: end;
     }
@@ -91,9 +91,8 @@ const Section = styled.section<style1Type>`
     }
   }
   @media screen and (min-width: 1000px) {
-    flex-direction: row;
+    flex-direction: row-reverse;
     & > figure {
-      order: 1;
       margin: 0 50px;
     }
     & > article {
