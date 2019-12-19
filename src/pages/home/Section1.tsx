@@ -66,7 +66,7 @@ export default Section1;
 
 const Section = styled.section`
   top: 0;
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   height: 100vh;
   z-index: -10;

@@ -43,4 +43,31 @@ font-size:10px;
   }
 
 
+img {
+    width: auto;
+    height: auto;
+
+  }
+
+ h2 {
+    font-size:3.8em;
+    font-weight: 400;
+    letter-spacing:3px;
+  }
+p {
+  font-size:1.2em;
+  letter-spacing:1px;
+  line-height: 3em;
+}
+a {
+  text-decoration :none;
+}
+
+
+@media screen and (min-width:1000px) {
+  h2 {
+    font-size:5em;
+
+  }
+}
 `;

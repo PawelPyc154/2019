@@ -52,9 +52,6 @@ const Styled = styled(motion.div)`
 
     align-items: center;
 
-    & > a {
-      text-decoration: none;
-    }
     & li {
       font-size: 1.2em;
       color: #000;
