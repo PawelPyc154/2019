@@ -163,6 +163,7 @@ const Section = styled.section<style1Type>`
       & > span {
         color: ${props => props.styled.nav.navActive};
         font-size: 1.1em;
+        margin: 10px 0 30px 0;
       }
     }
 

@@ -69,6 +69,7 @@ const Section = styled.section<style1Type>`
     }
     & > span {
       color: ${props => props.styled.nav.navActive};
+      letter-spacing: 3px;
     }
     & > p {
       margin: 20px 0;
