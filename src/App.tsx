@@ -17,6 +17,8 @@ const App: React.FC = () => {
   );
 };
 
+////
+
 export default App;
 
 const GlobalStyle = createGlobalStyle<style1Type>`
