@@ -16,7 +16,7 @@ const App: React.FC = () => {
     </Router>
   );
 };
-
+//
 export default App;
 
 const GlobalStyle = createGlobalStyle<style1Type>`
