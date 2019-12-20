@@ -1,8 +1,8 @@
-import React, {Suspense, lazy} from "react";
-import {Route, Switch} from "react-router";
-import About from "./About";
+import React, { Suspense, lazy } from 'react';
+import { Route, Switch } from 'react-router';
+import About from './About';
 
-const Home = lazy(() => import("./home/Home"));
+const Home = lazy(() => import('./home/Home'));
 export interface PagesProps {}
 
 const Pages: React.SFC<PagesProps> = () => {

@@ -1,41 +1,41 @@
-import React, {useEffect, useState} from "react";
-import styled from "styled-components";
-import Layer_15 from "../../img/home/Layer_15.png";
-import Layer_18 from "../../img/home/Layer_18.png";
-import {Link} from "react-router-dom";
-import {style1, style1Type} from "../../state/style/style1";
-import {motion} from "framer-motion";
+import React from 'react';
+import styled from 'styled-components';
+import Layer_15 from '../../img/home/Layer_15.png';
+import Layer_18 from '../../img/home/Layer_18.png';
+import { Link } from 'react-router-dom';
+import { style1, style1Type } from '../../state/style/style1';
+import { motion } from 'framer-motion';
 
 export interface Section2Props {
   scroll: number;
 }
 
-const Section2: React.SFC<Section2Props> = ({scroll}) => {
+const Section2: React.SFC<Section2Props> = ({ scroll }) => {
   return (
-    <Section styled={style1} animate={scroll > 4000 ? "start" : "end"}>
+    <Section styled={style1} animate={scroll > 4000 ? 'start' : 'end'}>
       <figure>
         <motion.img
           src={Layer_15}
           alt=""
           variants={{
-            start: {x: 0, transition: {duration: 1}},
+            start: { x: 0, transition: { duration: 1 } },
 
-            end: {x: "-2000px", transition: {duration: 0}}
+            end: { x: '-2000px', transition: { duration: 0 } }
           }}
         />
         <motion.img
           src={Layer_18}
           alt=""
           variants={{
-            start: {x: 0, transition: {duration: 1}},
-            end: {x: "2000px", transition: {duration: 0}}
+            start: { x: 0, transition: { duration: 1 } },
+            end: { x: '2000px', transition: { duration: 0 } }
           }}
         />
       </figure>
       <motion.article
         variants={{
-          start: {opacity: 1, y: 0, transition: {duration: 1}},
-          end: {opacity: 0, y: "1000px", transition: {duration: 0}}
+          start: { opacity: 1, y: 0, transition: { duration: 1 } },
+          end: { opacity: 0, y: '1000px', transition: { duration: 0 } }
         }}
       >
         <h2>contact</h2>
@@ -72,6 +72,7 @@ const Section = styled(motion.section)<style1Type>`
       align-self: flex-end;
       display: block;
       width: 80%;
+      color: red;
     }
     & > img:last-child {
       align-self: flex-start;

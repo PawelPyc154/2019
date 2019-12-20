@@ -1,16 +1,16 @@
-import React, {useRef, useEffect, useState} from "react";
-import styled from "styled-components";
-import Layer_1 from "../../img/home/Layer_1.png";
-import Layer_3 from "../../img/home/Layer_3.png";
-import {Link} from "react-router-dom";
-import {style1, style1Type} from "../../state/style/style1";
-import {motion, useViewportScroll} from "framer-motion";
+import React, { useRef, useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import Layer_1 from '../../img/home/Layer_1.png';
+import Layer_3 from '../../img/home/Layer_3.png';
+import { style1, style1Type } from '../../state/style/style1';
 
 export interface Section2Props {
   scroll: number;
 }
 
-const Section2: React.FC<Section2Props> = ({scroll}) => {
+const Section2: React.FC<Section2Props> = ({ scroll }) => {
   const inputRef = useRef<any>({});
   // const scrollHandler = () => {
   //   console.log(inputRef.current.getBoundingClientRect());
@@ -25,7 +25,7 @@ const Section2: React.FC<Section2Props> = ({scroll}) => {
 
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
-    window.addEventListener("scroll", e => {
+    window.addEventListener('scroll', e => {
       setScrollY(
         inputRef.current.getBoundingClientRect().y - window.innerHeight
       );
@@ -38,31 +38,31 @@ const Section2: React.FC<Section2Props> = ({scroll}) => {
     <Section
       ref={inputRef}
       styled={style1}
-      animate={scrollY <= -1 ? "start" : "end"}
+      animate={scrollY <= -1 ? 'start' : 'end'}
     >
       <figure>
         <motion.img
           src={Layer_1}
           alt=""
           variants={{
-            start: {x: 0, transition: {duration: 0.5}},
+            start: { x: 0, transition: { duration: 1 } },
 
-            end: {x: "-2000px", transition: {duration: 0}}
+            end: { x: '-200px', transition: { duration: 0 } }
           }}
         />
         <motion.img
           src={Layer_3}
           alt=""
           variants={{
-            start: {x: 0, transition: {duration: 0.5}},
-            end: {x: "2000px", transition: {duration: 0}}
+            start: { x: 0, transition: { duration: 1 } },
+            end: { x: '200px', transition: { duration: 0 } }
           }}
         />
       </figure>
       <motion.article
         variants={{
-          start: {opacity: 1, y: 0, transition: {duration: 0.5}},
-          end: {opacity: 0, y: "1000px", transition: {duration: 0}}
+          start: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+          end: { opacity: 0, y: '1000px', transition: { duration: 0 } }
         }}
       >
         <h2>about</h2>

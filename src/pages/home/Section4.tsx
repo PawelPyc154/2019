@@ -1,41 +1,41 @@
-import React, {useState, useEffect} from "react";
-import styled from "styled-components";
-import Layer_10 from "../../img/home/Layer_10.png";
-import Layer_11 from "../../img/home/Layer_11.png";
-import {Link} from "react-router-dom";
-import {style1, style1Type} from "../../state/style/style1";
-import {motion} from "framer-motion";
+import React from 'react';
+import styled from 'styled-components';
+import Layer_10 from '../../img/home/Layer_10.png';
+import Layer_11 from '../../img/home/Layer_11.png';
+import { Link } from 'react-router-dom';
+import { style1, style1Type } from '../../state/style/style1';
+import { motion } from 'framer-motion';
 
 export interface Section2Props {
   scroll: number;
 }
 
-const Section2: React.FC<Section2Props> = ({scroll}) => {
+const Section2: React.FC<Section2Props> = ({ scroll }) => {
   return (
-    <Section styled={style1} animate={scroll > 1400 ? "start" : "end"}>
+    <Section styled={style1} animate={scroll > 1400 ? 'start' : 'end'}>
       <figure>
         <motion.img
           src={Layer_10}
           alt=""
           variants={{
-            start: {x: 0, transition: {duration: 1}},
+            start: { x: 0, transition: { duration: 1 } },
 
-            end: {x: "-2000px", transition: {duration: 0}}
+            end: { x: '-2000px', transition: { duration: 0 } }
           }}
         />
         <motion.img
           src={Layer_11}
           alt=""
           variants={{
-            start: {x: 0, transition: {duration: 1}},
-            end: {x: "2000px", transition: {duration: 0}}
+            start: { x: 0, transition: { duration: 1 } },
+            end: { x: '2000px', transition: { duration: 0 } }
           }}
         />
       </figure>
       <motion.article
         variants={{
-          start: {opacity: 1, y: 0, transition: {duration: 1}},
-          end: {opacity: 0, y: "1000px", transition: {duration: 0}}
+          start: { opacity: 1, y: 0, transition: { duration: 1 } },
+          end: { opacity: 0, y: '1000px', transition: { duration: 0 } }
         }}
       >
         <h2>menu</h2>

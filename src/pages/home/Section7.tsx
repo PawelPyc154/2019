@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import {style1Type, style1} from "../../state/style/style1";
-import img__1920x200px from "../../img/home/img__1920x200px.png";
+import React from 'react';
+import { style1Type, style1 } from '../../state/style/style1';
+import img__1920x200px from '../../img/home/img__1920x200px.png';
+import styled from 'styled-components';
 
 export interface Section3Props {}
 
