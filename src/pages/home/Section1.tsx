@@ -35,24 +35,30 @@ const Section1: React.SFC<Section1Props> = () => {
           <div>
             <Content styled={style1}>
               <div>
-                <h3>made with love</h3>
-                <span>for you</span>
+                <motion.h3 animate={{x: "0", transition: {duration: 1}}}>
+                  made with love
+                </motion.h3>
+                <motion.span animate={{x: "0", transition: {duration: 1}}}>
+                  for you
+                </motion.span>
               </div>
               <div>
-                <button
+                <motion.button
+                  animate={{x: "0", transition: {duration: 1}}}
                   onClick={() => setSlider(slider - 1)}
                   disabled={slider === 0 ? true : false}
                   style={slider === 0 ? {border: "none"} : {}}
                 >
                   <MdKeyboardArrowLeft />
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                  animate={{x: "0", transition: {duration: 1}}}
                   onClick={() => setSlider(slider + 1)}
                   disabled={slider === 2 ? true : false}
                   style={slider === 2 ? {border: "none"} : {}}
                 >
                   <MdKeyboardArrowRight />
-                </button>
+                </motion.button>
               </div>
             </Content>
           </div>
@@ -64,7 +70,7 @@ const Section1: React.SFC<Section1Props> = () => {
 
 export default Section1;
 
-const Section = styled.section`
+const Section = styled(motion.section)`
   top: 0;
   /* position: absolute; */
   width: 100%;
@@ -155,6 +161,7 @@ const Content = styled.div<style1Type>`
     margin: 0 0 20px 0;
 
     & > h3 {
+      transform: translateX(-2000px);
       font-size: 2.8em;
       letter-spacing: 2px;
       color: #fff;
@@ -162,6 +169,8 @@ const Content = styled.div<style1Type>`
       margin: 10px 0;
     }
     & > span {
+      display: block;
+      transform: translateX(2000px);
       font-size: 2.2em;
       color: ${props => props.styled.nav.navActive};
       letter-spacing: 2px;
@@ -179,6 +188,13 @@ const Content = styled.div<style1Type>`
       color: white;
       font-size: 2.8em;
       padding-top: 3px;
+
+      &:nth-child(1) {
+        transform: translateX(2000px);
+      }
+      &:nth-child(2) {
+        transform: translateX(-2000px);
+      }
     }
   }
 

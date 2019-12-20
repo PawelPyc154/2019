@@ -1,19 +1,43 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Layer_15 from "../../img/home/Layer_15.png";
 import Layer_18 from "../../img/home/Layer_18.png";
 import {Link} from "react-router-dom";
 import {style1, style1Type} from "../../state/style/style1";
-export interface Section2Props {}
+import {motion} from "framer-motion";
 
-const Section2: React.SFC<Section2Props> = () => {
+export interface Section2Props {
+  scroll: number;
+}
+
+const Section2: React.SFC<Section2Props> = ({scroll}) => {
   return (
-    <Section styled={style1}>
+    <Section styled={style1} animate={scroll > 4000 ? "start" : "end"}>
       <figure>
-        <img src={Layer_15} alt="" />
-        <img src={Layer_18} alt="" />
+        <motion.img
+          src={Layer_15}
+          alt=""
+          variants={{
+            start: {x: 0, transition: {duration: 1}},
+
+            end: {x: "-2000px", transition: {duration: 0}}
+          }}
+        />
+        <motion.img
+          src={Layer_18}
+          alt=""
+          variants={{
+            start: {x: 0, transition: {duration: 1}},
+            end: {x: "2000px", transition: {duration: 0}}
+          }}
+        />
       </figure>
-      <article>
+      <motion.article
+        variants={{
+          start: {opacity: 1, y: 0, transition: {duration: 1}},
+          end: {opacity: 0, y: "1000px", transition: {duration: 0}}
+        }}
+      >
         <h2>contact</h2>
         <span>WE WELCOME YOU IN OUR RESTAURANT</span>
         <p>
@@ -25,14 +49,15 @@ const Section2: React.SFC<Section2Props> = () => {
         </p>
 
         <Link to="/contact">...</Link>
-      </article>
+      </motion.article>
     </Section>
   );
 };
 
 export default Section2;
 
-const Section = styled.section<style1Type>`
+const Section = styled(motion.section)<style1Type>`
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;

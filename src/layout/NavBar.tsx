@@ -165,6 +165,7 @@ export default NavBar;
 const Styled = styled.div<style1Type>`
   position: absolute;
   width: 100%;
+
   & > header {
     margin: 0 auto;
     width: 100%;
@@ -176,6 +177,7 @@ const Styled = styled.div<style1Type>`
     padding: 0 10px;
     z-index: 1500;
     /* position: absolute; */
+
     & > h1 {
       font-size: 2.5em;
       font-weight: 400;
