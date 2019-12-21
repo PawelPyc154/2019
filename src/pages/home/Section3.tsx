@@ -4,6 +4,7 @@ import { style1Type, style1 } from '../../state/style/style1';
 import ID600x400px from '../../img/home/ID600x400px.png';
 import ID560x373px from '../../img/home/ID560x373px.png';
 import ID530x320px from '../../img/home/ID530x320px.png';
+
 import ID500x333px from '../../img/home/ID500x333px.png';
 import { motion } from 'framer-motion';
 

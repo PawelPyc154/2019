@@ -1,35 +1,35 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Layer_26 from '../../img/home/Layer_26.png';
-import Layer_27 from '../../img/home/Layer_27.png';
-import Layer_28 from '../../img/home/Layer_28.png';
-
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { style1, style1Type } from '../../state/style/style1';
 import { motion } from 'framer-motion';
+import Layer26 from '../../img/home/Layer_26.png';
+import Layer27 from '../../img/home/Layer_27.png';
+import Layer28 from '../../img/home/Layer_28.png';
 
-export interface Section1Props {}
+
+import { style1, style1Type } from '../../state/style/style1';
+
+
+export interface Section1Props { }
 
 const Section1: React.SFC<Section1Props> = () => {
-  const images = [Layer_26, Layer_27, Layer_28];
+  const images = [Layer26, Layer27, Layer28];
   const [slider, setSlider] = useState(0);
-  console.log(slider);
 
   return (
     <Section>
-      <div></div>
+      <div />
       <div>
         <Slider animate={`${slider}`}>
-          {images.map(image => (
+          {images.map((image) => (
             <motion.div
               variants={{
                 0: { x: 0, transition: { duration: 0.6 } },
                 1: { x: '-100%', transition: { duration: 0.6 } },
-                2: { x: '-200%', transition: { duration: 0.6 } }
+                2: { x: '-200%', transition: { duration: 0.6 } },
               }}
               key={image}
-              // style={{background: `url(${image})`}}
-            ></motion.div>
+            />
           ))}
         </Slider>
         <div>
@@ -47,7 +47,7 @@ const Section1: React.SFC<Section1Props> = () => {
                 <motion.button
                   animate={{ x: '0', transition: { duration: 1 } }}
                   onClick={() => setSlider(slider - 1)}
-                  disabled={slider === 0 ? true : false}
+                  disabled={slider === 0}
                   style={slider === 0 ? { border: 'none' } : {}}
                 >
                   <MdKeyboardArrowLeft />
@@ -55,7 +55,7 @@ const Section1: React.SFC<Section1Props> = () => {
                 <motion.button
                   animate={{ x: '0', transition: { duration: 1 } }}
                   onClick={() => setSlider(slider + 1)}
-                  disabled={slider === 2 ? true : false}
+                  disabled={slider === 2}
                   style={slider === 2 ? { border: 'none' } : {}}
                 >
                   <MdKeyboardArrowRight />
@@ -106,7 +106,7 @@ const Section = styled(motion.section)`
 interface SliderProps {
   animate: number | string;
 }
-const Slider = styled(motion.div)<SliderProps>`
+const Slider = styled(motion.div) <SliderProps>`
   display: grid;
   grid-template-columns: 100vw 100vw 100vw;
   grid-template-rows: 1fr;
@@ -118,28 +118,28 @@ const Slider = styled(motion.div)<SliderProps>`
     transform: translateX(-100%);
 
     &:nth-child(1) {
-      background: url(${Layer_26});
+      background: url(${Layer26});
       background-position: -450px;
     }
     &:nth-child(2) {
-      background: url(${Layer_27});
+      background: url(${Layer27});
       background-position: -900px;
     }
     &:nth-child(3) {
-      background: url(${Layer_28});
+      background: url(${Layer28});
       background-position: -1100px;
     }
     @media screen and (min-width: 1000px) {
       &:nth-child(1) {
-        background: url(${Layer_26});
+        background: url(${Layer26});
         background-position: center;
       }
       &:nth-child(2) {
-        background: url(${Layer_27});
+        background: url(${Layer27});
         background-position: center;
       }
       &:nth-child(3) {
-        background: url(${Layer_28});
+        background: url(${Layer28});
         background-position: center;
       }
     }
@@ -173,7 +173,7 @@ const Content = styled.div<style1Type>`
       display: block;
       transform: translateX(2000px);
       font-size: 2.2em;
-      color: ${props => props.styled.nav.navActive};
+      color: ${(props) => props.styled.nav.navActive};
       letter-spacing: 2px;
     }
   }

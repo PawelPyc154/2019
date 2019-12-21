@@ -1,24 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 import { style1Type, style1 } from '../../state/style/style1';
 import img__1920x200px from '../../img/home/img__1920x200px.png';
-import styled from 'styled-components';
 
-export interface Section3Props {}
 
-const Section3: React.SFC<Section3Props> = () => {
-  return (
-    <Section styled={style1}>
-      <h2>our services</h2>
-      <span>ADVANTAGES OF OUR RESTAURANT</span>
-      <div>
-        <h3>Pick or Delivery</h3>
-        <h3>Serving With Love</h3>
-        <h3>Daily Lunch Specials</h3>
-      </div>
-      <figure>ORDER NOW</figure>
-    </Section>
-  );
-};
+export interface Section3Props { }
+
+const Section3: React.SFC<Section3Props> = () => (
+  <Section styled={style1}>
+    <h2>our services</h2>
+    <span>ADVANTAGES OF OUR RESTAURANT</span>
+    <div>
+      <h3>Pick or Delivery</h3>
+      <h3>Serving With Love</h3>
+      <h3>Daily Lunch Specials</h3>
+    </div>
+    <figure>ORDER NOW</figure>
+  </Section>
+);
 
 export default Section3;
 
@@ -28,7 +27,7 @@ const Section = styled.section<style1Type>`
   & > span {
     display: block;
     padding: 50px 0 20px 0;
-    color: ${props => props.styled.nav.navActive};
+    color: ${(props) => props.styled.nav.navActive};
     letter-spacing: 3px;
   }
 

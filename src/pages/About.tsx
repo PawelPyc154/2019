@@ -1,13 +1,11 @@
-import React from "react";
+import React from 'react';
 
-export interface AboutProps {}
+export interface AboutProps { }
 
-const About: React.SFC<AboutProps> = () => {
-  return (
-    <>
-      <div>gdf</div>
-    </>
-  );
-};
+const About: React.SFC<AboutProps> = () => (
+  <>
+    <div>gdf</div>
+  </>
+);
 
 export default About;

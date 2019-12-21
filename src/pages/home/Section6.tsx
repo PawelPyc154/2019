@@ -1,61 +1,60 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Layer_30 from '../../img/home/Layer_30.png';
 import Layer_31 from '../../img/home/Layer_31.png';
-import { Link } from 'react-router-dom';
 import { style1, style1Type } from '../../state/style/style1';
-import { motion } from 'framer-motion';
+
 
 export interface Section2Props {
   scroll: number;
 }
 
-const Section2: React.FC<Section2Props> = ({ scroll }) => {
-  return (
-    <Section styled={style1} animate={scroll > 2300 ? 'start' : 'end'}>
-      <figure>
-        <motion.img
-          src={Layer_30}
-          alt=""
-          variants={{
-            start: { x: 0, transition: { duration: 1 } },
-
-            end: { x: '-2000px', transition: { duration: 0 } }
-          }}
-        />
-        <motion.img
-          src={Layer_31}
-          alt=""
-          variants={{
-            start: { x: 0, transition: { duration: 1 } },
-            end: { x: '2000px', transition: { duration: 0 } }
-          }}
-        />
-      </figure>
-      <motion.article
+const Section2: React.FC<Section2Props> = ({ scroll }) => (
+  <Section styled={style1} animate={scroll > 2300 ? 'start' : 'end'}>
+    <figure>
+      <motion.img
+        src={Layer_30}
+        alt=""
         variants={{
-          start: { opacity: 1, y: 0, transition: { duration: 1 } },
-          end: { opacity: 0, y: '1000px', transition: { duration: 0 } }
-        }}
-      >
-        <h2>reservation</h2>
-        <span>BOOK YOUR TABLE AT OUR RESTAURANT NOW!</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
-          consequatur, omnis soluta reprehenderit quidem totam perspiciatis
-          excepturi quod iusto delectus numquam optio aliquam officia molestias
-          quasi earum! Officiis laudantium quod nihil hic soluta.
-        </p>
+          start: { x: 0, transition: { duration: 1 } },
 
-        <Link to="/reservation">...</Link>
-      </motion.article>
-    </Section>
-  );
-};
+          end: { x: '-2000px', transition: { duration: 0 } },
+        }}
+      />
+      <motion.img
+        src={Layer_31}
+        alt=""
+        variants={{
+          start: { x: 0, transition: { duration: 1 } },
+          end: { x: '2000px', transition: { duration: 0 } },
+        }}
+      />
+    </figure>
+    <motion.article
+      variants={{
+        start: { opacity: 1, y: 0, transition: { duration: 1 } },
+        end: { opacity: 0, y: '1000px', transition: { duration: 0 } },
+      }}
+    >
+      <h2>reservation</h2>
+      <span>BOOK YOUR TABLE AT OUR RESTAURANT NOW!</span>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+        consequatur, omnis soluta reprehenderit quidem totam perspiciatis
+        excepturi quod iusto delectus numquam optio aliquam officia molestias
+        quasi earum! Officiis laudantium quod nihil hic soluta.
+      </p>
+
+      <Link to="/reservation">...</Link>
+    </motion.article>
+  </Section>
+);
 
 export default Section2;
 
-const Section = styled(motion.section)<style1Type>`
+const Section = styled(motion.section) <style1Type>`
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -90,7 +89,7 @@ const Section = styled(motion.section)<style1Type>`
       margin: 20px 0;
     }
     & > span {
-      color: ${props => props.styled.nav.navActive};
+      color: ${(props) => props.styled.nav.navActive};
       letter-spacing: 3px;
     }
     & > p {

@@ -1,15 +1,17 @@
-import React, {useState} from "react";
-import styled from "styled-components";
-import {NavLink} from "react-router-dom";
-import {FaSearch, FaShoppingCart} from "react-icons/fa";
-import {MdKeyboardArrowRight} from "react-icons/md";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import { FaSearch, FaShoppingCart } from 'react-icons/fa';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
-import {style1, style1Type} from "../state/style/style1";
-import HamburgerMenu from "./HamburgerMenu";
-import {motion} from "framer-motion";
-import Features from "./Freatures";
-import BasketDropDown from "./BasketDropDown";
-export interface NavBarProps {}
+
+import { motion } from 'framer-motion';
+import { style1, style1Type } from '../state/style/style1';
+import HamburgerMenu from './HamburgerMenu';
+import Features from './Freatures';
+import BasketDropDown from './BasketDropDown';
+
+export interface NavBarProps { }
 
 const NavBar: React.FC<NavBarProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,17 +23,17 @@ const NavBar: React.FC<NavBarProps> = () => {
       <header>
         <h1>Renome</h1>
         <motion.nav
-          animate={isOpen ? (features ? "openFeatures" : "open") : "closed"}
+          animate={isOpen ? (features ? 'openFeatures' : 'open') : 'closed'}
         >
           <ul>
             <motion.li
               variants={
                 window.screen.width < 1000
                   ? {
-                      closed: {x: "130%", transition: {duration: 0.6}},
-                      open: {x: 0, transition: {duration: 0.6}},
-                      openFeatures: {x: "130%", transition: {duration: 0.6}}
-                    }
+                    closed: { x: '130%', transition: { duration: 0.6 } },
+                    open: { x: 0, transition: { duration: 0.6 } },
+                    openFeatures: { x: '130%', transition: { duration: 0.6 } },
+                  }
                   : {}
               }
             >
@@ -118,7 +120,7 @@ const NavBar: React.FC<NavBarProps> = () => {
               >
                 <ol>Contact</ol>
               </NavLink>
-              <div></div>
+              <div />
             </motion.li>
             <li>
               <ol>

@@ -1,47 +1,47 @@
-import React from "react";
-import styled from "styled-components";
-import {style1Type, style1} from "../../state/style/style1";
-import img_326_x_326_px_b from "../../img/home/img_326_x_326_px_b.png";
-import img_326_x_326_px_bv from "../../img/home/img_326_x_326_px_bv.png";
-import img_326_x_326_px from "../../img/home/img_326_x_326_px.png";
-import {Link} from "react-router-dom";
+import styled from 'styled-components';
 
-export interface Section3Props {}
+import { Link } from 'react-router-dom';
+import React from 'react';
+import { style1Type, style1 } from '../../state/style/style1';
+import img_326_x_326_px_b from '../../img/home/img_326_x_326_px_b.png';
+import img_326_x_326_px_bv from '../../img/home/img_326_x_326_px_bv.png';
+import img_326_x_326_px from '../../img/home/img_326_x_326_px.png';
 
-const Section3: React.SFC<Section3Props> = () => {
-  return (
-    <Section styled={style1}>
-      <h2>blog</h2>
-      <span>NEWS, RECIPES AND MUCH MORE</span>
+
+export interface Section3Props { }
+
+const Section3: React.SFC<Section3Props> = () => (
+  <Section styled={style1}>
+    <h2>blog</h2>
+    <span>NEWS, RECIPES AND MUCH MORE</span>
+    <div>
       <div>
         <div>
-          <div>
-            <p>10/03</p>
-            <span>GRAND OPENING</span>
+          <p>10/03</p>
+          <span>GRAND OPENING</span>
 
-            <Link to="/about">...</Link>
-          </div>
-        </div>
-        <div>
-          <div>
-            <p>10/03</p>
-            <span>GRAND OPENING</span>
-
-            <Link to="/about">...</Link>
-          </div>
-        </div>
-        <div>
-          <div>
-            <p>10/03</p>
-            <span>GRAND OPENING</span>
-
-            <Link to="/about">...</Link>
-          </div>
+          <Link to="/about">...</Link>
         </div>
       </div>
-    </Section>
-  );
-};
+      <div>
+        <div>
+          <p>10/03</p>
+          <span>GRAND OPENING</span>
+
+          <Link to="/about">...</Link>
+        </div>
+      </div>
+      <div>
+        <div>
+          <p>10/03</p>
+          <span>GRAND OPENING</span>
+
+          <Link to="/about">...</Link>
+        </div>
+      </div>
+    </div>
+  </Section>
+);
 
 export default Section3;
 
@@ -51,7 +51,7 @@ const Section = styled.section<style1Type>`
   & > span {
     display: block;
     padding: 50px 0 20px 0;
-    color: ${props => props.styled.nav.navActive};
+    color: ${(props) => props.styled.nav.navActive};
     letter-spacing: 3px;
   }
   & > div {

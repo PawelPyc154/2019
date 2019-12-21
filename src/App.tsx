@@ -1,22 +1,24 @@
-import React from "react";
-import NavBar from "./layout/NavBar";
-import {BrowserRouter as Router} from "react-router-dom";
-import {createGlobalStyle} from "styled-components";
-import {style1, style1Type} from "./state/style/style1";
-import Pages from "./pages/Pages";
+import { BrowserRouter as Router } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import React from 'react';
+import NavBar from './layout/NavBar';
 
-const App: React.FC = () => {
-  return (
-    <Router>
-      <GlobalStyle styled={style1} />
-      <NavBar />
-      <main>
-        <Pages />
-      </main>
-    </Router>
-  );
-};
-////
+
+import { style1, style1Type } from './state/style/style1';
+import Pages from './pages/Pages';
+
+const App: React.FC = () => (
+  <Router>
+    <GlobalStyle styled={style1} />
+
+    <NavBar />
+
+    <main>
+      <Pages />
+    </main>
+  </Router>
+);
+// //
 export default App;
 
 const GlobalStyle = createGlobalStyle<style1Type>`
@@ -38,7 +40,7 @@ font-size:10px;
 
 .activeLink {
     & > ol,li {
-      color: ${props => props.styled.nav.navActive} !important;
+      color: ${(props) => props.styled.nav.navActive} !important;
     }
   }
 

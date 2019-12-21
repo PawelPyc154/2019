@@ -1,40 +1,39 @@
-import React from "react";
-import styled from "styled-components";
-import {motion} from "framer-motion";
-import {style1, style1Type} from "../state/style/style1";
+import React from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { style1, style1Type } from '../state/style/style1';
 
 interface HamburgerMenuProps {
   toggle: () => void;
 }
 
-const HamburgerMenu: React.SFC<HamburgerMenuProps> = ({toggle}) => {
-  return (
-    <Button onClick={toggle}>
-      <Span
+
+const HamburgerMenu: React.SFC<HamburgerMenuProps> = ({ toggle }) => (
+  <Button onClick={toggle}>
+    <Span
+      variants={{
+        closed: { rotate: 0 },
+        open: { rotate: 135, transition: { duration: 0.4 } },
+      }}
+    >
+      <SpanChild
+        styled={style1}
         variants={{
-          closed: {rotate: 0},
-          open: {rotate: 135, transition: {duration: 0.4}}
+          open: { y: 0 },
+          closed: { y: -7 },
         }}
-      >
-        <SpanChild
-          styled={style1}
-          variants={{
-            open: {y: 0},
-            closed: {y: -7}
-          }}
-        ></SpanChild>
-        <SpanChild styled={style1}></SpanChild>
-        <SpanChild
-          styled={style1}
-          variants={{
-            open: {y: 0, rotate: 90},
-            closed: {y: 7, rotate: 0}
-          }}
-        ></SpanChild>
-      </Span>
-    </Button>
-  );
-};
+      />
+      <SpanChild styled={style1} />
+      <SpanChild
+        styled={style1}
+        variants={{
+          open: { y: 0, rotate: 90 },
+          closed: { y: 7, rotate: 0 },
+        }}
+      />
+    </Span>
+  </Button>
+);
 
 export default HamburgerMenu;
 
@@ -65,12 +64,12 @@ const Span = styled(motion.span)`
   /* background-color: blue; */
 `;
 
-const SpanChild = styled(motion.span)<style1Type>`
+const SpanChild = styled(motion.span) <style1Type>`
   display: flex;
   width: 100%;
   height: 1px;
   position: absolute;
-  background-color: ${props => props.styled.nav.navHamburgerColor};
+  background-color: ${(props) => props.styled.nav.navHamburgerColor};
   top: 50%;
 
   &:nth-child(1) {
