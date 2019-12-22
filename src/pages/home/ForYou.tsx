@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Layer26 from '../../img/home/Layer_26.png';
-import Layer27 from '../../img/home/Layer_27.png';
-import Layer28 from '../../img/home/Layer_28.png';
 
 import { style1, style1Type } from '../../state/style/style1';
 
-const elo = require('../../img/home/Layer_26.png');
+const Layer26 = require('../../img/home/Layer_26.png');
+const Layer27 = require('../../img/home/Layer_27.png');
+const Layer28 = require('../../img/home/Layer_28.png');
 
-export interface Section1Props {}
+export interface ForYouProps {}
 
-const Section1: React.SFC<Section1Props> = () => {
+const ForYou: React.SFC<ForYouProps> = () => {
   const images = [Layer26, Layer27, Layer28];
   const [slider, setSlider] = useState(0);
 
   return (
     <Section>
       <div />
+
       <div>
         <Slider animate={`${slider}`}>
           {images.map(image => (
@@ -65,7 +65,7 @@ const Section1: React.SFC<Section1Props> = () => {
   );
 };
 
-export default Section1;
+export default ForYou;
 
 const Section = styled(motion.section)`
   top: 0;

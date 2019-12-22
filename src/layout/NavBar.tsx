@@ -261,6 +261,7 @@ const Styled = styled.div<style1Type>`
             &:first-child {
               & > div,
               button {
+                cursor: pointer;
                 display: flex;
                 justify-content: center;
                 align-items: center;

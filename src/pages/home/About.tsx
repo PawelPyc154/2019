@@ -1,62 +1,35 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Layer_1 from '../../img/home/Layer_1.png';
-import Layer_3 from '../../img/home/Layer_3.png';
-
 import { style1, style1Type } from '../../state/style/style1';
+import Scroll from '../../middleware/Scroll';
 
-export interface Section2Props {
-  scroll: number;
-}
+const Layer1 = require('../../img/home/Layer_1.png');
+const Layer3 = require('../../img/home/Layer_3.png');
 
-const Section2: React.FC<Section2Props> = () => {
-  const inputRef = useRef<any>({});
-  // const scrollHandler = () => {
-  //   console.log(inputRef.current.getBoundingClientRect());
-  // };
-  // useEffect(() => {
-  //   window.addEventListener("scroll", scrollHandler, true);
-  //   return () => {
-  //     window.removeEventListener("scroll", scrollHandler, true);
-  //   };
-  // }, []);
-  // console.log(window.innerHeight);
+export interface AboutProps {}
 
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    window.addEventListener('scroll', (e) => {
-      setScrollY(
-        inputRef.current.getBoundingClientRect().y - window.innerHeight,
-      );
-    });
-  }, []);
-
-  // console.log(scrollY);
+const About: React.FC<AboutProps> = () => {
+  const scrollRef = useRef<any>({});
 
   return (
-    <Section
-      ref={inputRef}
-      styled={style1}
-      animate={scrollY <= -1 ? 'start' : 'end'}
-    >
+    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
       <figure>
         <motion.img
-          src={Layer_1}
+          src={Layer1}
           alt=""
           variants={{
-            start: { x: 0, transition: { duration: 1 } },
-
-            end: { x: '-200px', transition: { duration: 0 } },
+            start: { x: 0, transition: { duration: 1, ease: 'linear' } },
+            end: { x: '2000px', transition: { duration: 0, ease: 'linear' } },
           }}
         />
         <motion.img
-          src={Layer_3}
+          src={Layer3}
           alt=""
           variants={{
-            start: { x: 0, transition: { duration: 1 } },
-            end: { x: '200px', transition: { duration: 0 } },
+            start: { x: 0, transition: { duration: 1, ease: 'linear' } },
+            end: { x: '-2000px', transition: { duration: 0, ease: 'linear' } },
           }}
         />
       </figure>
@@ -69,15 +42,14 @@ const Section2: React.FC<Section2Props> = () => {
         <h2>about</h2>
         <span>WE CREATE DELICIOUS MEMORIES</span>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
-          consequatur, omnis soluta reprehenderit quidem totam perspiciatis
-          excepturi quod iusto delectus numquam optio aliquam officia molestias
-          quasi earum! Officiis laudantium quod nihil hic soluta, rem, sapiente
-          tempore dignissimos pariatur totam, iure quos magnam id unde sint.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, consequatur, omnis soluta reprehenderit
+          quidem totam perspiciatis excepturi quod iusto delectus numquam optio aliquam officia molestias quasi earum!
+          Officiis laudantium quod nihil hic soluta, rem, sapiente tempore dignissimos pariatur totam, iure quos magnam
+          id unde sint.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          assumenda iste ipsam omnis hic dolore veniam nam animi rem magni.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum assumenda iste ipsam omnis hic dolore
+          veniam nam animi rem magni.
         </p>
         <Link to="/about">...</Link>
       </motion.article>
@@ -85,9 +57,9 @@ const Section2: React.FC<Section2Props> = () => {
   );
 };
 
-export default Section2;
+export default About;
 
-const Section = styled(motion.section) <style1Type>`
+const Section = styled(motion.section)<style1Type>`
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -121,7 +93,7 @@ const Section = styled(motion.section) <style1Type>`
       margin: 20px 0;
     }
     & > span {
-      color: ${(props) => props.styled.nav.navActive};
+      color: ${props => props.styled.nav.navActive};
       letter-spacing: 3px;
       font-size: 1.2em;
     }

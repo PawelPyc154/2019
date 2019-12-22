@@ -24,7 +24,10 @@
     "indent": "off",
     "@typescript-eslint/indent": "off",
     "react/prop-types": "off",
-    "no-nested-ternary": "off"
+    "no-nested-ternary": "off",
+    "react/no-unescaped-entities": "off"
+
+
   },
   "settings": {
     "import/extensions": [

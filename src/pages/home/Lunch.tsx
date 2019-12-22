@@ -1,20 +1,30 @@
-import React, {useState} from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
-import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from 'react-icons/md';
-import {style1Type, style1} from '../../state/style/style1';
-import ID600x400px from '../../img/home/ID600x400px.png';
-import ID560x373px from '../../img/home/ID560x373px.png';
-import ID530x320px from '../../img/home/ID530x320px.png';
-import ID500x333px from '../../img/home/ID500x333px.png';
+import { motion } from 'framer-motion';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { style1Type, style1 } from '../../state/style/style1';
+import Scroll from '../../middleware/Scroll';
 
-export interface Section3Props {}
+const ID600x400px = require('../../img/home/ID600x400px.png');
+const ID560x373px = require('../../img/home/ID560x373px.png');
+const ID530x320px = require('../../img/home/ID530x320px.png');
+const ID500x333px = require('../../img/home/ID500x333px.png');
 
-const Section3: React.SFC<Section3Props> = () => {
+export interface LunchProps {}
+
+const Lunch: React.SFC<LunchProps> = () => {
   const [slider, setSlider] = useState(0);
+  const scrollRef = useRef<any>({});
   return (
-    <Section styled={style1}>
-      <article>
+    <Section ref={scrollRef} styled={style1}>
+      <motion.article
+        animate={Scroll(scrollRef, 1) ? 'start' : 'end'}
+        variants={{
+          start: { y: 0, transition: { duration: 2, ease: 'linear' } },
+
+          end: { y: '-1000px', transition: { duration: 0, ease: 'linear' } },
+        }}
+      >
         <div>
           <h2>lunch</h2>
           <span>OF THE DAY</span>
@@ -27,16 +37,16 @@ const Section3: React.SFC<Section3Props> = () => {
               variants={
                 window.screen.width < 1000
                   ? {
-                      0: {x: 0, transition: {duration: 0.5}},
-                      1: {x: '-100%', transition: {duration: 0.5}},
-                      2: {x: '-200%', transition: {duration: 0.5}},
-                      3: {x: '-300%', transition: {duration: 0.5}}
+                      0: { x: 0, transition: { duration: 0.5 } },
+                      1: { x: '-100%', transition: { duration: 0.5 } },
+                      2: { x: '-200%', transition: { duration: 0.5 } },
+                      3: { x: '-300%', transition: { duration: 0.5 } },
                     }
                   : {
-                      0: {x: 0, scale: 1, opacity: 1, zIndex: -10},
-                      1: {x: '-80px', scale: 0.9, opacity: 0.7, zIndex: -20},
-                      2: {x: '-160px', scale: 0.8, opacity: 0.6, zIndex: -30},
-                      3: {x: '-220px', scale: 0.7, opacity: 0.5, zIndex: -40}
+                      0: { x: 0, scale: 1, opacity: 1, zIndex: -10, transition: { ease: 'linear' } },
+                      1: { x: '-80px', scale: 0.9, opacity: 0.7, zIndex: -20 },
+                      2: { x: '-160px', scale: 0.8, opacity: 0.6, zIndex: -30 },
+                      3: { x: '-220px', scale: 0.7, opacity: 0.5, zIndex: -40 },
                     }
               }
             />
@@ -46,16 +56,16 @@ const Section3: React.SFC<Section3Props> = () => {
               variants={
                 window.screen.width < 1000
                   ? {
-                      0: {x: 0, transition: {duration: 0.5}},
-                      1: {x: '-100%', transition: {duration: 0.5}},
-                      2: {x: '-200%', transition: {duration: 0.5}},
-                      3: {x: '-300%', transition: {duration: 0.5}}
+                      0: { x: 0, transition: { duration: 0.5 } },
+                      1: { x: '-100%', transition: { duration: 0.5 } },
+                      2: { x: '-200%', transition: { duration: 0.5 } },
+                      3: { x: '-300%', transition: { duration: 0.5 } },
                     }
                   : {
-                      0: {x: 0, scale: 1, opacity: 0.7, zIndex: -20},
-                      1: {x: '-70px', scale: 1.07, opacity: 1, zIndex: -10},
-                      2: {x: '-140px', scale: 1, opacity: 0.7, zIndex: -20},
-                      3: {x: '-210px', scale: 0.9, opacity: 0.6, zIndex: -30}
+                      0: { x: 0, scale: 1, opacity: 0.7, zIndex: -20, transition: { ease: 'linear' } },
+                      1: { x: '-70px', scale: 1.07, opacity: 1, zIndex: -10 },
+                      2: { x: '-140px', scale: 1, opacity: 0.7, zIndex: -20 },
+                      3: { x: '-210px', scale: 0.9, opacity: 0.6, zIndex: -30 },
                     }
               }
             />
@@ -65,16 +75,16 @@ const Section3: React.SFC<Section3Props> = () => {
               variants={
                 window.screen.width < 1000
                   ? {
-                      0: {x: 0, transition: {duration: 0.5}},
-                      1: {x: '-100%', transition: {duration: 0.5}},
-                      2: {x: '-200%', transition: {duration: 0.5}},
-                      3: {x: '-300%', transition: {duration: 0.5}}
+                      0: { x: 0, transition: { duration: 0.5 } },
+                      1: { x: '-100%', transition: { duration: 0.5 } },
+                      2: { x: '-200%', transition: { duration: 0.5 } },
+                      3: { x: '-300%', transition: { duration: 0.5 } },
                     }
                   : {
-                      0: {x: 0, scale: 1, opacity: 0.6, zIndex: -30},
-                      1: {x: '-70px', scale: 1.05, opacity: 0.7, zIndex: -20},
-                      2: {x: '-135px', scale: 1.15, opacity: 1, zIndex: -10},
-                      3: {x: '-200px', scale: 1.05, opacity: 0.7, zIndex: -20}
+                      0: { x: 0, scale: 1, opacity: 0.6, zIndex: -30, transition: { ease: 'linear' } },
+                      1: { x: '-70px', scale: 1.05, opacity: 0.7, zIndex: -20 },
+                      2: { x: '-135px', scale: 1.15, opacity: 1, zIndex: -10 },
+                      3: { x: '-200px', scale: 1.05, opacity: 0.7, zIndex: -20 },
                     }
               }
             />
@@ -84,55 +94,60 @@ const Section3: React.SFC<Section3Props> = () => {
               variants={
                 window.screen.width < 1000
                   ? {
-                      0: {x: 0, transition: {duration: 0.5}},
-                      1: {x: '-100%', transition: {duration: 0.5}},
-                      2: {x: '-200%', transition: {duration: 0.5}},
-                      3: {x: '-300%', transition: {duration: 0.5}}
+                      0: { x: 0, transition: { duration: 0.5 } },
+                      1: { x: '-100%', transition: { duration: 0.5 } },
+                      2: { x: '-200%', transition: { duration: 0.5 } },
+                      3: { x: '-300%', transition: { duration: 0.5 } },
                     }
                   : {
-                      0: {x: 0, scale: 1, opacity: 0.5, zIndex: -40},
-                      1: {x: '-50px', scale: 1.05, opacity: 0.6, zIndex: -30},
-                      2: {
-                        x: '-111px',
-                        scale: 1.15,
-                        opacity: 0.7,
-                        zIndex: -20
-                      },
-                      3: {x: '-179px', scale: 1.25, opacity: 1, zIndex: -10}
+                      0: { x: 0, scale: 1, opacity: 0.5, zIndex: -40, transition: { ease: 'linear' } },
+                      1: { x: '-50px', scale: 1.05, opacity: 0.6, zIndex: -30 },
+                      2: { x: '-111px', scale: 1.15, opacity: 0.7, zIndex: -20 },
+                      3: { x: '-179px', scale: 1.25, opacity: 1, zIndex: -10 },
                     }
               }
             />
             <div>
               <button
+                aria-label="Mute volume"
+                type="button"
                 onClick={() => setSlider(0)}
-                style={slider === 0 ? {border: 'none'} : {}}
+                style={slider === 0 ? { border: 'none' } : {}}
               />
               <button
+                aria-label="Mute volume"
+                type="button"
                 onClick={() => setSlider(1)}
-                style={slider === 1 ? {border: 'none'} : {}}
+                style={slider === 1 ? { border: 'none' } : {}}
               />
               <button
+                aria-label="Mute volume"
+                type="button"
                 onClick={() => setSlider(2)}
-                style={slider === 2 ? {border: 'none'} : {}}
+                style={slider === 2 ? { border: 'none' } : {}}
               />
               <button
+                aria-label="Mute volume"
+                type="button"
                 onClick={() => setSlider(3)}
-                style={slider === 3 ? {border: 'none'} : {}}
+                style={slider === 3 ? { border: 'none' } : {}}
               />
             </div>
 
             <div>
               <button
+                type="button"
                 onClick={() => setSlider(slider + 1)}
                 disabled={slider === 3}
-                style={slider === 3 ? {border: 'none'} : {}}
+                style={slider === 3 ? { border: 'none' } : {}}
               >
                 <MdKeyboardArrowLeft />
               </button>
               <button
+                type="button"
                 onClick={() => setSlider(slider - 1)}
                 disabled={slider === 0}
-                style={slider === 0 ? {border: 'none'} : {}}
+                style={slider === 0 ? { border: 'none' } : {}}
               >
                 <MdKeyboardArrowRight />
               </button>
@@ -143,14 +158,15 @@ const Section3: React.SFC<Section3Props> = () => {
             <span>Monday</span>
           </div>
         </div>
-      </article>
+      </motion.article>
     </Section>
   );
 };
 
-export default Section3;
+export default Lunch;
 
 const Section = styled.section<style1Type>`
+  overflow: hidden;
   padding: 5px;
   /* height: 510px; */
   display: flex;
