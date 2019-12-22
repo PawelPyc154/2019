@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { motion } from 'framer-motion';
+import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from 'react-icons/md';
+import {motion} from 'framer-motion';
 import Layer26 from '../../img/home/Layer_26.png';
+
 import Layer27 from '../../img/home/Layer_27.png';
 import Layer28 from '../../img/home/Layer_28.png';
 
+import {style1, style1Type} from '../../state/style/style1';
 
-import { style1, style1Type } from '../../state/style/style1';
-
-
-export interface Section1Props { }
+export interface Section1Props {}
 
 const Section1: React.SFC<Section1Props> = () => {
   const images = [Layer26, Layer27, Layer28];
@@ -21,12 +20,12 @@ const Section1: React.SFC<Section1Props> = () => {
       <div />
       <div>
         <Slider animate={`${slider}`}>
-          {images.map((image) => (
+          {images.map(image => (
             <motion.div
               variants={{
-                0: { x: 0, transition: { duration: 0.6 } },
-                1: { x: '-100%', transition: { duration: 0.6 } },
-                2: { x: '-200%', transition: { duration: 0.6 } },
+                0: {x: 0, transition: {duration: 0.6}},
+                1: {x: '-100%', transition: {duration: 0.6}},
+                2: {x: '-200%', transition: {duration: 0.6}}
               }}
               key={image}
             />
@@ -36,27 +35,27 @@ const Section1: React.SFC<Section1Props> = () => {
           <div>
             <Content styled={style1}>
               <div>
-                <motion.h3 animate={{ x: '0', transition: { duration: 1 } }}>
+                <motion.h3 animate={{x: '0', transition: {duration: 1}}}>
                   made with love
                 </motion.h3>
-                <motion.span animate={{ x: '0', transition: { duration: 1 } }}>
+                <motion.span animate={{x: '0', transition: {duration: 1}}}>
                   for you
                 </motion.span>
               </div>
               <div>
                 <motion.button
-                  animate={{ x: '0', transition: { duration: 1 } }}
+                  animate={{x: '0', transition: {duration: 1}}}
                   onClick={() => setSlider(slider - 1)}
                   disabled={slider === 0}
-                  style={slider === 0 ? { border: 'none' } : {}}
+                  style={slider === 0 ? {border: 'none'} : {}}
                 >
                   <MdKeyboardArrowLeft />
                 </motion.button>
                 <motion.button
-                  animate={{ x: '0', transition: { duration: 1 } }}
+                  animate={{x: '0', transition: {duration: 1}}}
                   onClick={() => setSlider(slider + 1)}
                   disabled={slider === 2}
-                  style={slider === 2 ? { border: 'none' } : {}}
+                  style={slider === 2 ? {border: 'none'} : {}}
                 >
                   <MdKeyboardArrowRight />
                 </motion.button>
@@ -106,7 +105,7 @@ const Section = styled(motion.section)`
 interface SliderProps {
   animate: number | string;
 }
-const Slider = styled(motion.div) <SliderProps>`
+const Slider = styled(motion.div)<SliderProps>`
   display: grid;
   grid-template-columns: 100vw 100vw 100vw;
   grid-template-rows: 1fr;
@@ -173,7 +172,7 @@ const Content = styled.div<style1Type>`
       display: block;
       transform: translateX(2000px);
       font-size: 2.2em;
-      color: ${(props) => props.styled.nav.navActive};
+      color: ${props => props.styled.nav.navActive};
       letter-spacing: 2px;
     }
   }

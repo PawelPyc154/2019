@@ -23,9 +23,13 @@ const Features: React.SFC<FeaturesProps> = ({ toggle, close }) => (
           : {}
       }
     >
+
+
       <li>
         <button onClick={toggle}>
+
           <MdKeyboardArrowLeft />
+
         </button>
         <span>Back</span>
       </li>

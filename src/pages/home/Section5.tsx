@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { style1Type, style1 } from '../../state/style/style1';
+import {style1Type, style1} from '../../state/style/style1';
 import Layer_29 from '../../img/home/Layer_29.png';
 
-export interface Section3Props { }
-
+export interface Section3Props {}
 
 const Section3: React.SFC<Section3Props> = () => (
   <Section styled={style1}>

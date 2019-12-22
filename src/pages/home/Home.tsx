@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Section1 from './Section1';
 
@@ -12,7 +12,7 @@ import Section8 from './Section8';
 
 import Section9 from './Section9';
 
-export interface HomeProps { }
+export interface HomeProps {}
 
 const Home: React.FC<HomeProps> = () => {
   const [scrollY, setScrollY] = useState(0);
