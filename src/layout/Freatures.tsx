@@ -1,39 +1,41 @@
+import { MdKeyboardArrowLeft } from 'react-icons/md';
 import React from 'react';
-import {MdKeyboardArrowLeft} from 'react-icons/md';
+
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import {NavLink} from 'react-router-dom';
-import {motion} from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 export interface FeaturesProps {
   toggle: () => void;
   close: () => void;
 }
 
-const Features: React.SFC<FeaturesProps> = ({toggle, close}) => (
+const Features: React.SFC<FeaturesProps> = ({ toggle, close }) => (
   <div>
     <Ul
       variants={
         window.screen.width < 1000
           ? {
-              closed: {x: '-130%', transition: {duration: 0.6}},
-              open: {x: '-130%', transition: {duration: 0.6}},
-              openFeatures: {x: 0, transition: {duration: 0.6}}
+              closed: { x: '-130%', transition: { duration: 0.6 } },
+              open: { x: '-130%', transition: { duration: 0.6 } },
+              openFeatures: { x: 0, transition: { duration: 0.6 } },
             }
           : {}
-      }>
+      }
+    >
       <li>
-        <button onClick={toggle}>
+        <button type="button" onClick={toggle}>
           <MdKeyboardArrowLeft />
         </button>
         <span>Back</span>
       </li>
-      <NavLink to='/' exact activeClassName='activeLink' onClick={close}>
+      <NavLink to="/" exact activeClassName="activeLink" onClick={close}>
         <li>One page</li>
       </NavLink>
-      <NavLink to='/' exact activeClassName='activeLink' onClick={close}>
+      <NavLink to="/" exact activeClassName="activeLink" onClick={close}>
         <li>Portfolio</li>
       </NavLink>
-      <NavLink to='/' exact activeClassName='activeLink' onClick={close}>
+      <NavLink to="/" exact activeClassName="activeLink" onClick={close}>
         <li>Shortcodes</li>
       </NavLink>
     </Ul>
