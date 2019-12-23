@@ -29,13 +29,13 @@ const Features: React.SFC<FeaturesProps> = ({ toggle, close }) => (
         </button>
         <span>Back</span>
       </li>
-      <NavLink to="/" exact activeClassName="activeLink" onClick={close}>
+      <NavLink to="/OnePage" exact activeClassName="activeLink" onClick={close}>
         <li>One page</li>
       </NavLink>
-      <NavLink to="/" exact activeClassName="activeLink" onClick={close}>
+      <NavLink to="/Portfolio" exact activeClassName="activeLink" onClick={close}>
         <li>Portfolio</li>
       </NavLink>
-      <NavLink to="/" exact activeClassName="activeLink" onClick={close}>
+      <NavLink to="/Shortcodes" exact activeClassName="activeLink" onClick={close}>
         <li>Shortcodes</li>
       </NavLink>
     </Ul>

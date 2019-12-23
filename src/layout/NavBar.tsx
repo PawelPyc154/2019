@@ -62,7 +62,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                 <ol>About</ol>
               </NavLink>
               <NavLink
-                to="/"
+                to="/Menu"
                 exact
                 activeClassName="activeLink"
                 onClick={() => {
@@ -72,7 +72,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                 <ol>Menu</ol>
               </NavLink>
               <NavLink
-                to="/"
+                to="/Reservations"
                 exact
                 activeClassName="activeLink"
                 onClick={() => {
@@ -82,7 +82,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                 <ol> Reservations</ol>
               </NavLink>
               <NavLink
-                to="/"
+                to="/Blog"
                 exact
                 activeClassName="activeLink"
                 onClick={() => {
@@ -98,7 +98,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                 </button>
               </ol>
               <NavLink
-                to="/"
+                to="/Shop"
                 exact
                 activeClassName="activeLink"
                 onClick={() => {
@@ -108,7 +108,7 @@ const NavBar: React.FC<NavBarProps> = () => {
                 <ol>Shop</ol>
               </NavLink>
               <NavLink
-                to="/"
+                to="/Contact"
                 exact
                 activeClassName="activeLink"
                 onClick={() => {

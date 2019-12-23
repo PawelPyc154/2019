@@ -1,25 +1,29 @@
-import {BrowserRouter as Router} from 'react-router-dom';
-import {createGlobalStyle} from 'styled-components';
-import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import React, { Suspense, lazy } from 'react';
 import NavBar from './layout/NavBar';
-import {style1, style1Type} from './state/style/style1';
-
+import { style1, style1Type } from './state/style/style1';
 import Pages from './pages/Pages';
 
+const Footer = lazy(() => import('./layout/Footer'));
+
 const App: React.FC = () => (
-  <Router>
-    <GlobalStyle styled={style1} />
-    <NavBar />
-    <main>
-      <Pages />
-    </main>
-  </Router>
+  <Suspense fallback={<>loading...</>}>
+    <Router>
+      <GlobalStyle styled={style1} />
+      <NavBar />
+      <main>
+        <Pages />
+      </main>
+      <Footer />
+    </Router>
+  </Suspense>
 );
 
 export default App;
 
 const GlobalStyle = createGlobalStyle<style1Type>`
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Pacifico&display=swap&subset=latin-ext" rel="stylesheet');
+@import url('href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=latin-ext" rel="stylesheet"');
 
 *,*::after,*::before{
   margin:0; 

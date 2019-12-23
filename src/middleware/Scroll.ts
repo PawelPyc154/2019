@@ -7,7 +7,9 @@ const Scroll = (scrollRef: any, y: number = 1): boolean | number => {
   useEffect(() => {
     if (scrollY > -y) {
       window.addEventListener('scroll', () => {
-        setScrollY(scrollRef.current.getBoundingClientRect().y - window.innerHeight);
+        if (!!scrollRef.current) {
+          setScrollY(scrollRef.current.getBoundingClientRect().y - window.innerHeight);
+        }
       });
     } else {
       setflag(true);
