@@ -1,11 +1,11 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import NavBar from './layout/NavBar';
 import { style1, style1Type } from './state/style/style1';
 import Pages from './pages/Pages';
 
-const Footer = lazy(() => import('./layout/Footer'));
+// const Footer = lazy(() => import('./layout/Footer'));
 
 const App: React.FC = () => (
   <Suspense fallback={<>loading...</>}>
@@ -15,7 +15,7 @@ const App: React.FC = () => (
       <main>
         <Pages />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   </Suspense>
 );
