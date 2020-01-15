@@ -9,7 +9,7 @@ import Pages from './pages/Pages';
 
 const App: React.FC = () => (
   <Suspense fallback={<>loading...</>}>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <GlobalStyle styled={style1} />
       <NavBar />
       <main>

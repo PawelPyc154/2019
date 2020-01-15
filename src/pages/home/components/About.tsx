@@ -2,11 +2,11 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { style1, style1Type } from '../../state/style/style1';
-import Scroll from '../../middleware/Scroll';
+import { style1, style1Type } from '../../../state/style/style1';
+import Scroll from '../../../middleware/Scroll';
 
-const Layer1 = require('../../img/home/Layer_1.png');
-const Layer3 = require('../../img/home/Layer_3.png');
+const Layer1 = require('../../../img/home/Layer_1.png');
+const Layer3 = require('../../../img/home/Layer_3.png');
 
 export interface AboutProps {}
 

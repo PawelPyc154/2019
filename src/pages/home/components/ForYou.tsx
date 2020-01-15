@@ -3,11 +3,11 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { style1, style1Type } from '../../state/style/style1';
+import { style1, style1Type } from '../../../state/style/style1';
 
-const Layer26 = require('../../img/home/Layer_26.png');
-const Layer27 = require('../../img/home/Layer_27.png');
-const Layer28 = require('../../img/home/Layer_28.png');
+const Layer26 = require('../../../img/home/Layer_26.png');
+const Layer27 = require('../../../img/home/Layer_27.png');
+const Layer28 = require('../../../img/home/Layer_28.png');
 
 export interface ForYouProps {}
 
@@ -18,7 +18,6 @@ const ForYou: React.SFC<ForYouProps> = () => {
   return (
     <Section>
       <div />
-
       <div>
         <Slider animate={`${slider}`}>
           {images.map(image => (
@@ -44,7 +43,7 @@ const ForYou: React.SFC<ForYouProps> = () => {
                   animate={{ x: '0', transition: { duration: 1 } }}
                   onClick={() => setSlider(slider - 1)}
                   disabled={slider === 0}
-                  style={slider === 0 ? { border: 'none' } : {}}
+                  style={slider === 0 ? { border: 'none' } : { cursor: 'pointer' }}
                 >
                   <MdKeyboardArrowLeft />
                 </motion.button>
@@ -52,7 +51,7 @@ const ForYou: React.SFC<ForYouProps> = () => {
                   animate={{ x: '0', transition: { duration: 1 } }}
                   onClick={() => setSlider(slider + 1)}
                   disabled={slider === 2}
-                  style={slider === 2 ? { border: 'none' } : {}}
+                  style={slider === 2 ? { border: 'none' } : { cursor: 'pointer' }}
                 >
                   <MdKeyboardArrowRight />
                 </motion.button>

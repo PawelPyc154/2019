@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { style1Type, style1 } from '../../state/style/style1';
+import { style1Type, style1 } from '../../../state/style/style1';
 
-import Scroll from '../../middleware/Scroll';
+import Scroll from '../../../middleware/Scroll';
 
-const img1920x200px = require('../../img/home/img__1920x200px.png');
+const img1920x200px = require('../../../img/home/img__1920x200px.png');
 
 export interface OurServicesProps {}
 

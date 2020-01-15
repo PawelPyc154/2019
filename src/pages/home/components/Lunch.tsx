@@ -2,13 +2,13 @@ import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { style1Type, style1 } from '../../state/style/style1';
-import Scroll from '../../middleware/Scroll';
+import { style1Type, style1 } from '../../../state/style/style1';
+import Scroll from '../../../middleware/Scroll';
 
-const ID600x400px = require('../../img/home/ID600x400px.png');
-const ID560x373px = require('../../img/home/ID560x373px.png');
-const ID530x320px = require('../../img/home/ID530x320px.png');
-const ID500x333px = require('../../img/home/ID500x333px.png');
+const ID600x400px = require('../../../img/home/ID600x400px.png');
+const ID560x373px = require('../../../img/home/ID560x373px.png');
+const ID530x320px = require('../../../img/home/ID530x320px.png');
+const ID500x333px = require('../../../img/home/ID500x333px.png');
 
 export interface LunchProps {}
 
@@ -139,7 +139,7 @@ const Lunch: React.SFC<LunchProps> = () => {
                 type="button"
                 onClick={() => setSlider(slider + 1)}
                 disabled={slider === 3}
-                style={slider === 3 ? { border: 'none' } : {}}
+                style={slider === 3 ? { color: 'gray' } : { cursor: 'pointer' }}
               >
                 <MdKeyboardArrowLeft />
               </button>
@@ -147,7 +147,7 @@ const Lunch: React.SFC<LunchProps> = () => {
                 type="button"
                 onClick={() => setSlider(slider - 1)}
                 disabled={slider === 0}
-                style={slider === 0 ? { border: 'none' } : {}}
+                style={slider === 0 ? { color: 'gray' } : { cursor: 'pointer' }}
               >
                 <MdKeyboardArrowRight />
               </button>

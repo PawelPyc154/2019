@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { style1Type, style1 } from '../../state/style/style1';
-import Scroll from '../../middleware/Scroll';
+import { style1Type, style1 } from '../../../state/style/style1';
+import Scroll from '../../../middleware/Scroll';
 
-const Layer29 = require('../../img/home/Layer_29.png');
+const Layer29 = require('../../../img/home/Layer_29.png');
 
 export interface RemanticProps {}
 

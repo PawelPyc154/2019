@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { style1Type, style1 } from '../../state/style/style1';
-import Scroll from '../../middleware/Scroll';
+import { style1Type, style1 } from '../../../state/style/style1';
+import Scroll from '../../../middleware/Scroll';
 
-const img326x326pxb = require('../../img/home/img_326_x_326_px_b.png');
-const img326x326pxbv = require('../../img/home/img_326_x_326_px_bv.png');
-const img326x326px = require('../../img/home/img_326_x_326_px.png');
+const img326x326pxb = require('../../../img/home/img_326_x_326_px_b.png');
+const img326x326pxbv = require('../../../img/home/img_326_x_326_px_bv.png');
+const img326x326px = require('../../../img/home/img_326_x_326_px.png');
 
 export interface BlogProps {}
 

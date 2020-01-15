@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { style1Type, style1 } from '../../state/style/style1';
+import { style1Type, style1 } from '../../../state/style/style1';
 
 export interface Section3Props { }
 

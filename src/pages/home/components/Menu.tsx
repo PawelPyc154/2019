@@ -2,22 +2,22 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { style1, style1Type } from '../../../state/style/style1';
+import Scroll from '../../../middleware/Scroll';
 
-import { style1, style1Type } from '../../state/style/style1';
-import Scroll from '../../middleware/Scroll';
+const Layer10 = require('../../../img/home/Layer_10.png');
+const Layer11 = require('../../../img/home/Layer_11.png');
 
-const Layer30 = require('../../img/home/Layer_30.png');
-const Layer31 = require('../../img/home/Layer_31.png');
+export interface MenuProps {}
 
-export interface ReservationProps {}
-
-const Reservation: React.FC<ReservationProps> = () => {
+const Menu: React.FC<MenuProps> = () => {
   const scrollRef = useRef<any>({});
+
   return (
-    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
+    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef) ? 'start' : 'end'}>
       <figure>
         <motion.img
-          src={Layer30}
+          src={Layer10}
           alt=""
           variants={{
             start: { x: 0, transition: { duration: 1 } },
@@ -26,7 +26,7 @@ const Reservation: React.FC<ReservationProps> = () => {
           }}
         />
         <motion.img
-          src={Layer31}
+          src={Layer11}
           alt=""
           variants={{
             start: { x: 0, transition: { duration: 1 } },
@@ -40,21 +40,20 @@ const Reservation: React.FC<ReservationProps> = () => {
           end: { opacity: 0, y: '1000px', transition: { duration: 0 } },
         }}
       >
-        <h2>reservation</h2>
-        <span>BOOK YOUR TABLE AT OUR RESTAURANT NOW!</span>
+        <h2>menu</h2>
+        <span>DELICIOUS AND BEAUTIFUL</span>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, consequatur, omnis soluta reprehenderit
           quidem totam perspiciatis excepturi quod iusto delectus numquam optio aliquam officia molestias quasi earum!
-          Officiis laudantium quod nihil hic soluta.
+          Officiis laudantium quod nihil hic soluta, rem, sapiente tempore
         </p>
 
-        <Link to="/reservation">...</Link>
+        <Link to="/menu">...</Link>
       </motion.article>
     </Section>
   );
 };
-
-export default Reservation;
+export default Menu;
 
 const Section = styled(motion.section)<style1Type>`
   overflow: hidden;
@@ -69,13 +68,13 @@ const Section = styled(motion.section)<style1Type>`
     display: flex;
     flex-direction: column;
     & > img:first-child {
-      align-self: flex-start;
+      align-self: flex-end;
       display: block;
       width: 80%;
     }
     & > img:last-child {
-      align-self: flex-end;
-      margin: -100px 0 0 0;
+      align-self: flex-start;
+      margin: -130px 0 0 0;
       display: block;
       width: 80%;
       z-index: -1;
@@ -92,17 +91,22 @@ const Section = styled(motion.section)<style1Type>`
     }
     & > span {
       color: ${props => props.styled.nav.navActive};
+      text-align: end;
+      width: 100%;
+      display: block;
       letter-spacing: 3px;
     }
     & > p {
       margin: 20px 0;
+      text-align: end;
     }
     & > a {
       display: block;
       font-size: 2.5em;
       letter-spacing: 3px;
-      padding: 20px 0 0 0;
+      padding: 0 0 0 0;
       color: #000;
+      text-align: end;
     }
   }
   @media screen and (min-width: 550px) {
@@ -111,15 +115,24 @@ const Section = styled(motion.section)<style1Type>`
     }
   }
   @media screen and (min-width: 1000px) {
-    flex-direction: row;
+    flex-direction: row-reverse;
     & > figure {
       margin: 0 50px;
     }
     & > article {
       margin: 0 50px;
+
+      & > h2 {
+        text-align: end;
+        margin: 20px -100px 20px 0;
+      }
+      & > span {
+        color: ${props => props.styled.nav.navActive};
+        text-align: end;
+      }
       & > p {
         margin: 20px 0;
-        width: 90%;
+        width: 100%;
       }
     }
   }

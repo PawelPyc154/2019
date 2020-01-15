@@ -2,31 +2,30 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { style1, style1Type } from '../../state/style/style1';
-import Scroll from '../../middleware/Scroll';
+import { style1, style1Type } from '../../../state/style/style1';
+import Scroll from '../../../middleware/Scroll';
 
-const Layer10 = require('../../img/home/Layer_10.png');
-const Layer11 = require('../../img/home/Layer_11.png');
+const Layer15 = require('../../../img/home/Layer_15.png');
+const Layer18 = require('../../../img/home/Layer_18.png');
 
-export interface MenuProps {}
+export interface ContactProps {}
 
-const Menu: React.FC<MenuProps> = () => {
+const Contact: React.FC<ContactProps> = () => {
   const scrollRef = useRef<any>({});
 
   return (
-    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef) ? 'start' : 'end'}>
+    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
       <figure>
         <motion.img
-          src={Layer10}
+          src={Layer15}
           alt=""
           variants={{
             start: { x: 0, transition: { duration: 1 } },
-
             end: { x: '-2000px', transition: { duration: 0 } },
           }}
         />
         <motion.img
-          src={Layer11}
+          src={Layer18}
           alt=""
           variants={{
             start: { x: 0, transition: { duration: 1 } },
@@ -40,20 +39,21 @@ const Menu: React.FC<MenuProps> = () => {
           end: { opacity: 0, y: '1000px', transition: { duration: 0 } },
         }}
       >
-        <h2>menu</h2>
-        <span>DELICIOUS AND BEAUTIFUL</span>
+        <h2>contact</h2>
+        <span>WE WELCOME YOU IN OUR RESTAURANT</span>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, consequatur, omnis soluta reprehenderit
-          quidem totam perspiciatis excepturi quod iusto delectus numquam optio aliquam officia molestias quasi earum!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.Inventore, consequatur, omnis soluta reprehenderit
+          uidem totam perspiciatis excepturi quod iusto delectus numquam optio aliquam officia molestias quasi earum!
           Officiis laudantium quod nihil hic soluta, rem, sapiente tempore
         </p>
 
-        <Link to="/menu">...</Link>
+        <Link to="/contact">...</Link>
       </motion.article>
     </Section>
   );
 };
-export default Menu;
+
+export default Contact;
 
 const Section = styled(motion.section)<style1Type>`
   overflow: hidden;
@@ -71,6 +71,7 @@ const Section = styled(motion.section)<style1Type>`
       align-self: flex-end;
       display: block;
       width: 80%;
+      color: red;
     }
     & > img:last-child {
       align-self: flex-start;

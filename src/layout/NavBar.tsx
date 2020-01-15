@@ -261,13 +261,15 @@ const Styled = styled.div<style1Type>`
             &:first-child {
               & > div,
               button {
-                cursor: pointer;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 padding: 5px;
                 border: none;
                 background-color: transparent;
+              }
+              & > button {
+                cursor: pointer;
               }
               &::after {
                 content: '';
