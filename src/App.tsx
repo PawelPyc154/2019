@@ -19,7 +19,7 @@ const App: React.FC = () => (
     </Router>
   </Suspense>
 );
-
+//
 export default App;
 
 const GlobalStyle = createGlobalStyle<style1Type>`
