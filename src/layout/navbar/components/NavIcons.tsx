@@ -7,6 +7,7 @@ export interface NavIconsProps {
   state: {
     isOpen: boolean;
     basketOpen: boolean;
+    fontColor: string;
     setBasketOpen: React.Dispatch<React.SetStateAction<boolean>>;
     setFreatures: React.Dispatch<React.SetStateAction<boolean>>;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,10 +15,10 @@ export interface NavIconsProps {
 }
 
 const NavIcons: React.SFC<NavIconsProps> = ({ state }) => {
-  const { isOpen, basketOpen, setBasketOpen, setFreatures, setIsOpen } = state;
+  const { isOpen, basketOpen, setBasketOpen, setFreatures, setIsOpen, fontColor } = state;
 
   return (
-    <ContainerLi>
+    <ContainerLi fontColor={fontColor}>
       <ol>
         <button
           type="button"
@@ -27,7 +28,7 @@ const NavIcons: React.SFC<NavIconsProps> = ({ state }) => {
             setFreatures(false);
           }}
         >
-          <FaShoppingCart />
+          <FaShoppingCart style={{ color: fontColor }} />
         </button>
         <div>2</div>
       </ol>
@@ -46,9 +47,13 @@ const NavIcons: React.SFC<NavIconsProps> = ({ state }) => {
 
 export default NavIcons;
 
-const ContainerLi = styled.li`
+interface ContainerLiProps {
+  fontColor: string;
+}
+const ContainerLi = styled.li<ContainerLiProps>`
   display: flex;
   justify-content: space-between;
+
   & > ol {
     flex-basis: 30px;
     font-size: 1.2em;
@@ -56,7 +61,7 @@ const ContainerLi = styled.li`
     justify-content: center;
     align-items: center;
     margin: 0 13px;
-
+    color: ${props => props.fontColor};
     &:first-child {
       & > div,
       button {

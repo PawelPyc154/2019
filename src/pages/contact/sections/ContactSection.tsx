@@ -16,10 +16,11 @@ const Container = styled.div`
 
   height: 700px;
   width: 100%;
+  z-index: 0;
   &::after {
     background: rgba(30, 38, 51, 0.308);
     position: absolute;
-    z-index: 500;
+    z-index: 100;
     content: '';
     height: 700px;
     width: 100%;

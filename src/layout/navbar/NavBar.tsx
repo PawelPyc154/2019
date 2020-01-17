@@ -35,7 +35,7 @@ const NavBar: React.FC<NavBarProps> = () => {
         <motion.nav animate={isOpen ? (features ? 'openFeatures' : 'open') : 'closed'}>
           <ul>
             <NavLinks setIsOpen={setIsOpen} setFreatures={setFreatures} fontColor={fontColor} />
-            <NavIcons state={{ isOpen, basketOpen, setBasketOpen, setFreatures, setIsOpen }} />
+            <NavIcons state={{ isOpen, basketOpen, fontColor, setBasketOpen, setFreatures, setIsOpen }} />
           </ul>
 
           <Features
@@ -58,7 +58,7 @@ export default NavBar;
 const Styled = styled.div<style1Type>`
   position: absolute;
   width: 100%;
-
+  z-index: 300;
   & > header {
     margin: 0 auto;
     width: 100%;
@@ -75,6 +75,8 @@ const Styled = styled.div<style1Type>`
       font-size: 2.5em;
       font-weight: 400;
       letter-spacing: 2px;
+      color: ${props => props.fontColor};
+      z-index: 400;
     }
     & > nav {
       position: relative;

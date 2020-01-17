@@ -28,8 +28,8 @@ const NavLinks: React.SFC<NavLinksProps> = ({ setIsOpen, setFreatures, fontColor
       <ol>
         <input type="text" placeholder="Search..." />
 
-        <button type="button">
-          <FaSearch />
+        <button type="button" style={{ color: fontColor, opacity: 1 }}>
+          <FaSearch style={{ color: fontColor, opacity: 1 }} />
         </button>
       </ol>
       <NavLink
@@ -144,6 +144,7 @@ const ContainerLi = styled(motion.li)<ContainerLiProps>`
     display: flex;
     align-items: center;
     text-transform: uppercase;
+
     & input {
       height: 30px;
       width: 100%;
