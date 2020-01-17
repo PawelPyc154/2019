@@ -24,12 +24,8 @@ const NavBar: React.FC<NavBarProps> = () => {
   useEffect(() => {
     if (location.pathname === '/') {
       setFontColor('black');
-      console.log('black');
-      console.log(location.pathname);
     } else {
       setFontColor('white');
-      console.log('white');
-      console.log(location.pathname);
     }
   }, [location]);
 
