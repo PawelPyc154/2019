@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import React, { Suspense } from 'react';
-import NavBar from './layout/NavBar';
+import NavBar from './layout/navbar/NavBar';
 import { style1, style1Type } from './state/style/style1';
 import Pages from './pages/Pages';
 

@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { style1, style1Type } from '../state/style/style1';
+import { style1, style1Type } from '../../../state/style/style1';
 
 interface HamburgerMenuProps {
   toggle: () => void;
 }
-
 
 const HamburgerMenu: React.SFC<HamburgerMenuProps> = ({ toggle }) => (
   <Button onClick={toggle}>
@@ -64,12 +63,12 @@ const Span = styled(motion.span)`
   /* background-color: blue; */
 `;
 
-const SpanChild = styled(motion.span) <style1Type>`
+const SpanChild = styled(motion.span)<style1Type>`
   display: flex;
   width: 100%;
   height: 1px;
   position: absolute;
-  background-color: ${(props) => props.styled.nav.navHamburgerColor};
+  background-color: ${props => props.styled.nav.navHamburgerColor};
   top: 50%;
 
   &:nth-child(1) {
