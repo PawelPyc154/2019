@@ -21,6 +21,7 @@ const Remantic: React.SFC<RemanticProps> = () => {
       >
         <img src={Layer29} alt="" />
       </motion.figure>
+
       <motion.article
         variants={{
           start: { y: 0, transition: { duration: 1, ease: 'linear' } },

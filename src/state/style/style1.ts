@@ -6,6 +6,7 @@ export const style1 = {
     navHamburgerColor: '#1E2633',
     navActive: '#985e5b',
   },
+  spanColor: '#985e5b',
 };
 
 export interface style1Type {
@@ -17,6 +18,9 @@ export interface style1Type {
       navHamburgerColor: string;
       navActive: string;
     };
+
+    spanColor: string;
   };
+
   fontColor?: string;
 }
