@@ -32,11 +32,8 @@ const GlobalStyle = createGlobalStyle<style1Type>`
 }
 body{
 overflow-x:hidden;
-  /* font-family: 'Pacifico', cursive; */
 font-family: 'Montserrat', sans-serif;
 font-size:10px;
-
-
 }
 
 .activeLink {
@@ -52,12 +49,12 @@ img {
 
   }
 
- h2 {
+h2 {
     font-size:3.8em;
     font-weight: 400;
     letter-spacing:3px;
   }
- h3 {
+h3 {
     font-size:2em;
     font-weight: 400;
     letter-spacing:3px;

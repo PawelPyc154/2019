@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
@@ -17,8 +17,24 @@ const NavBar: React.FC<NavBarProps> = () => {
   const [features, setFreatures] = useState(false);
   const [basketOpen, setBasketOpen] = useState(false);
 
+  const [fontColor, setFontColor] = useState('white');
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setFontColor('black');
+      console.log('black');
+      console.log(location.pathname);
+    } else {
+      setFontColor('white');
+      console.log('white');
+      console.log(location.pathname);
+    }
+  }, [location]);
+
   return (
-    <Styled styled={style1}>
+    <Styled styled={style1} fontColor={fontColor}>
       <header>
         <h1>Renome</h1>
         <motion.nav animate={isOpen ? (features ? 'openFeatures' : 'open') : 'closed'}>
@@ -205,7 +221,7 @@ const Styled = styled.div<style1Type>`
           }
           & ol {
             font-size: 1.2em;
-            color: #000;
+            color: black;
             height: 8vh;
             font-weight: bold;
             display: flex;
@@ -304,6 +320,7 @@ const Styled = styled.div<style1Type>`
             background-color: initial;
             & ol {
               margin: 0;
+              color: ${props => props.fontColor};
               & input {
                 width: 60px;
                 &:focus {

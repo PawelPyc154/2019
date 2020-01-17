@@ -9,6 +9,14 @@ export const style1 = {
 };
 
 export interface style1Type {
-
-  styled: any;
+  styled: {
+    nav: {
+      fontColor: string;
+      navColor1: string;
+      navColor2: string;
+      navHamburgerColor: string;
+      navActive: string;
+    };
+  };
+  fontColor?: string;
 }

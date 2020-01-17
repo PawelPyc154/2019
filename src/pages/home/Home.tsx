@@ -1,14 +1,14 @@
 import React from 'react';
 
-import ForYou from './components/ForYou';
-import About from './components/About';
-import Lunch from './components/Lunch';
-import Menu from './components/Menu';
-import Remantic from './components/Remantic';
-import Reservation from './components/Reservation';
-import OurServices from './components/OurServices';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
+import ForYou from './sections/ForYou';
+import About from './sections/About';
+import Lunch from './sections/Lunch';
+import Menu from './sections/Menu';
+import Remantic from './sections/Remantic';
+import Reservation from './sections/Reservation';
+import OurServices from './sections/OurServices';
+import Blog from './sections/Blog';
+import Contact from './sections/Contact';
 
 export interface HomeProps {}
 
