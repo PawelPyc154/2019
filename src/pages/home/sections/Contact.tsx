@@ -11,7 +11,7 @@ const Layer18 = require('../../../images/home/Layer_18.png');
 export interface ContactProps {}
 
 const Contact: React.FC<ContactProps> = () => {
-  const scrollRef = useRef<any>({});
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>

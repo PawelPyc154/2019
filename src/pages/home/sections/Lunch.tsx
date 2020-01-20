@@ -14,7 +14,7 @@ export interface LunchProps {}
 
 const Lunch: React.SFC<LunchProps> = () => {
   const [slider, setSlider] = useState(0);
-  const scrollRef = useRef<any>({});
+  const scrollRef = useRef<HTMLDivElement>(null);
   return (
     <Section ref={scrollRef} styled={style1}>
       <motion.article

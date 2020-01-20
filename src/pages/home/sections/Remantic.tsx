@@ -9,7 +9,7 @@ const Layer29 = require('../../../images/home/Layer_29.png');
 export interface RemanticProps {}
 
 const Remantic: React.SFC<RemanticProps> = () => {
-  const scrollRef = useRef<any>({});
+  const scrollRef = useRef<HTMLDivElement>(null);
   return (
     <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
       <motion.figure

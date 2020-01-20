@@ -12,7 +12,7 @@ const Layer31 = require('../../../images/home/Layer_31.png');
 export interface ReservationProps {}
 
 const Reservation: React.FC<ReservationProps> = () => {
-  const scrollRef = useRef<any>({});
+  const scrollRef = useRef<HTMLDivElement>(null);
   return (
     <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
       <figure>

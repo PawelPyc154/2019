@@ -13,7 +13,7 @@ const img326x326px = require('../../../images/home/img_326_x_326_px.png');
 export interface BlogProps {}
 
 const Blog: React.SFC<BlogProps> = () => {
-  const scrollRef = useRef<any>({});
+  const scrollRef = useRef<HTMLDivElement>(null);
   return (
     <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
       <motion.h2

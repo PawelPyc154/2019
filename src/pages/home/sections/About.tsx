@@ -11,7 +11,7 @@ const Layer3 = require('../../../images/home/Layer_3.png');
 export interface AboutProps {}
 
 const About: React.FC<AboutProps> = () => {
-  const scrollRef = useRef<any>({});
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>

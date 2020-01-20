@@ -11,7 +11,7 @@ const Layer11 = require('../../../images/home/Layer_11.png');
 export interface MenuProps {}
 
 const Menu: React.FC<MenuProps> = () => {
-  const scrollRef = useRef<any>({});
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef) ? 'start' : 'end'}>

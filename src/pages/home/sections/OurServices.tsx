@@ -10,7 +10,7 @@ const img1920x200px = require('../../../images/home/img__1920x200px.png');
 export interface OurServicesProps {}
 
 const OurServices: React.SFC<OurServicesProps> = () => {
-  const scrollRef = useRef<any>({});
+  const scrollRef = useRef<HTMLDivElement>(null);
   return (
     <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
       <motion.h2
