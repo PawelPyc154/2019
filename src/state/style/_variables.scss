@@ -3,6 +3,12 @@ $color-secondary-font: white;
 $color-active-nav: #985e5b;
 $color-header: #985e5b;
 $color-shadow-background: #1e263385;
+
+@mixin tablet-small {
+  @media screen and (min-width: 550px) {
+    @content;
+  }
+}
 @mixin desktop {
   @media screen and (min-width: 1000px) {
     @content;

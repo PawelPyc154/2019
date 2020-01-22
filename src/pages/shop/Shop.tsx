@@ -3,12 +3,22 @@ import FirstSection from '../../components/FirstSection';
 
 const bg = require('../../images/shop/bg.png');
 
-export interface AboutProps {}
+export interface ShopProps {}
 
-const About: React.SFC<AboutProps> = () => (
-  <>
-    <FirstSection name="shop" text="order dishes online" image={bg} />
-  </>
-);
+const Shop: React.SFC<ShopProps> = () => {
+  const data = {
+    firstSection: {
+      name: 'shop',
+      text: 'order dishes online',
+      image: bg,
+    },
+  };
 
-export default About;
+  return (
+    <>
+      <FirstSection data={data.firstSection} />
+    </>
+  );
+};
+
+export default Shop;

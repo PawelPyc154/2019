@@ -1,17 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContactSection from './sections/ContactSection';
+
 import Happy from './sections/Happy';
 import Details from './sections/Details';
 import FormWriteMessage from './sections/FormWriteMessage';
+import FirstSection from '../../components/FirstSection';
+
+// FirstSection images
+const Layer19 = require('../../images/contact/Layer_19.png');
 // import Map from './sections/Map';
 
 export interface ContactProps {}
 
 const Contact: React.SFC<ContactProps> = () => {
+  const data = {
+    firstSection: {
+      name: 'contact',
+      text: 'we welcome you in our restaurant',
+      image: Layer19,
+    },
+  };
+
   return (
     <>
-      <ContactSection />
+      <FirstSection data={data.firstSection} />
       <Happy />
 
       <ContactFromWrapper>
