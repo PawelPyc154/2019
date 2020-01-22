@@ -1,12 +1,12 @@
 import React, { lazy } from 'react';
 import { Route, Switch } from 'react-router';
-import About from './about/About';
-import Menu from './menu/Menu';
-import Reservations from './reservations/Reservations';
-import Blog from './blog/Blog';
-import Shop from './shop/Shop';
 
 const Home = lazy(() => import('./home/Home'));
+const About = lazy(() => import('./about/About'));
+const Menu = lazy(() => import('./menu/Menu'));
+const Reservations = lazy(() => import('./reservations/Reservations'));
+const Blog = lazy(() => import('./blog/Blog'));
+const Shop = lazy(() => import('./shop/Shop'));
 const Contact = lazy(() => import('./contact/Contact'));
 
 export interface PagesProps {}
