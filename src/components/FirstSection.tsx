@@ -9,7 +9,7 @@ export interface FirstSectionProps {
 
 const FirstSection: React.SFC<FirstSectionProps> = ({ name, text, image }) => {
   return (
-    <section className="container" style={{ background: `url(${image})` }}>
+    <section className="firstSection" style={{ background: `url(${image})` }}>
       <div>
         <header>
           <h1>{name}</h1>
