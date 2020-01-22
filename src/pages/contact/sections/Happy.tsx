@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { style1, style1Type } from '../../../state/style/style1';
 import Scroll from '../../../middleware/Scroll';
 
-const Layer10 = require('../../../images/home/Layer_10.png');
-const Layer11 = require('../../../images/home/Layer_11.png');
+const Layer15 = require('../../../images/home/Layer_15.png');
+const Layer18 = require('../../../images/home/Layer_18.png');
 
 export interface HappyProps {}
 
@@ -17,7 +17,7 @@ const Happy: React.FC<HappyProps> = () => {
     <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef) ? 'start' : 'end'}>
       <figure>
         <motion.img
-          src={Layer10}
+          src={Layer15}
           alt=""
           variants={{
             start: { x: 0, transition: { duration: 1 } },
@@ -26,7 +26,7 @@ const Happy: React.FC<HappyProps> = () => {
           }}
         />
         <motion.img
-          src={Layer11}
+          src={Layer18}
           alt=""
           variants={{
             start: { x: 0, transition: { duration: 1 } },
@@ -58,7 +58,7 @@ const Section = styled(motion.section)<style1Type>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px 5px;
+  padding: 80px 5px;
   & > figure {
     margin: 0 auto;
     padding: 20px 0px;
@@ -96,14 +96,6 @@ const Section = styled(motion.section)<style1Type>`
     }
     & > p {
       margin: 20px 0;
-      text-align: end;
-    }
-    & > a {
-      display: block;
-      font-size: 2.5em;
-      letter-spacing: 3px;
-      padding: 0 0 0 0;
-      color: #000;
       text-align: end;
     }
   }

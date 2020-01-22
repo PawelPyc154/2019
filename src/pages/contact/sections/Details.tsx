@@ -13,7 +13,7 @@ const Details: React.SFC<DetailsProps> = () => {
       <span>PHONE</span>
       <p>+939 777 55 33</p>
       <span>EMAIL</span>
-      <p>RESERVATION@RENAME.COM</p>
+      <p>RESERVATION@RENOME.COM</p>
     </Section>
   );
 };
@@ -22,7 +22,7 @@ export default Details;
 
 const Section = styled.section<style1Type>`
   padding: 5px;
-
+  order: 1;
   & > h3 {
     font-size: 2em;
     color: ${props => props.styled.spanColor};
@@ -37,5 +37,9 @@ const Section = styled.section<style1Type>`
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 600px) {
+    margin: 0 0 0 60px;
   }
 `;

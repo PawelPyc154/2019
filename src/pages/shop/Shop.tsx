@@ -1,13 +1,13 @@
 import React from 'react';
 import FirstSection from '../../components/FirstSection';
 
-const Layer19 = require('../../images/contact/Layer_19.png');
+const bg = require('../../images/shop/bg.png');
 
 export interface AboutProps {}
 
 const About: React.SFC<AboutProps> = () => (
   <>
-    <FirstSection name="about" text="we create delicious memories" image={Layer19} />
+    <FirstSection name="shop" text="order dishes online" image={bg} />
   </>
 );
 
