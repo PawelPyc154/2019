@@ -1,0 +1,33 @@
+@import '../../../state/style/variables';
+
+.Meal {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 100px 1fr;
+  margin: 80px 0;
+
+  @include desktop {
+    grid-template-columns: 100px 1fr 50px;
+    margin: 30px 0;
+  }
+  & > img {
+  }
+  & > div {
+    & > h4 {
+      font-size: 1.4em;
+    }
+    & > p {
+      font-size: 1.2em;
+      grid-row: 1/3;
+      grid-column: 2/3;
+      line-height: 1.5em;
+    }
+  }
+  & > .mealCost {
+    font-size: 2em;
+
+    @include desktop {
+      margin-left: 20px;
+    }
+  }
+}

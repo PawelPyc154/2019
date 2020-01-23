@@ -1,6 +1,11 @@
 import React from 'react';
+import { Route } from 'react-router';
 import FirstSection from '../../components/FirstSection';
 import Article from '../../components/Article';
+import NavMenu from './components/NavMenu';
+
+import Lunch from './components/Lunch';
+import Breakfast from './components/Breakfast';
 
 const Layer12 = require('../../images/menu/Layer_12.png');
 
@@ -13,6 +18,7 @@ const Menu: React.SFC<MenuProps> = () => {
   const data = {
     firstSection: {
       name: 'menu',
+
       text: 'delicious and beautiful',
       image: Layer12,
     },
@@ -30,6 +36,11 @@ const Menu: React.SFC<MenuProps> = () => {
     <>
       <FirstSection data={data.firstSection} />
       <Article data={data.discover} />
+      <NavMenu />
+      <Route path="/menu/breakfast" exact component={Breakfast} />
+      <Route path="/menu/lunch" exact component={Lunch} />
+      <Route path="/menu/drink" exact component={Breakfast} />
+      <Route path="/menu/desserts" exact component={Lunch} />
     </>
   );
 };

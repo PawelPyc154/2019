@@ -15,7 +15,7 @@ const Pages: React.SFC<PagesProps> = () => (
   <Switch>
     <Route path="/" exact component={Home} />
     <Route path="/about" exact component={About} />
-    <Route path="/menu" exact component={Menu} />
+    <Route path="/menu" component={Menu} />
     <Route path="/contact" exact component={Contact} />
     <Route path="/reservations" exact component={Reservations} />
     <Route path="/blog" exact component={Blog} />

@@ -17,7 +17,6 @@
     "eslint-config-airbnb-typescript": "^6.3.1",
     "formik": "^2.1.2",
     "framer-motion": "^1.7.0",
-    "lightbox2": "^2.11.1",
     "node-sass": "^4.13.1",
     "production": "0.0.2",
     "react": "^16.12.0",
