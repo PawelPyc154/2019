@@ -1,0 +1,121 @@
+@import '../../../state/style/variables';
+
+.OpeningHouse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 100px 0;
+  padding: 5px;
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto 100px auto;
+    max-width: 1100px;
+  }
+  & > figure {
+    height: 750px;
+    @include desktop {
+      height: 220px;
+      width: 700px;
+    }
+    & > div {
+      position: relative;
+      width: 320px;
+      cursor: pointer;
+      & > a {
+        position: absolute;
+
+        &:nth-child(1) {
+          top: 0;
+          z-index: 800;
+          @include desktop {
+            height: 220px;
+            left: 0;
+            z-index: 300;
+          }
+        }
+        &:nth-child(2) {
+          top: 100px;
+          z-index: 700;
+
+          @include desktop {
+            top: 0;
+            left: 80px;
+            z-index: 400;
+          }
+        }
+        &:nth-child(3) {
+          top: 200px;
+          z-index: 600;
+          @include desktop {
+            top: 0;
+            left: 160px;
+            z-index: 500;
+          }
+        }
+        &:nth-child(4) {
+          top: 300px;
+          z-index: 500;
+          @include desktop {
+            top: 0;
+            left: 240px;
+            z-index: 600;
+          }
+        }
+        &:nth-child(5) {
+          top: 400px;
+          z-index: 400;
+          @include desktop {
+            top: 0;
+            left: 320px;
+            z-index: 700;
+          }
+        }
+        &:nth-child(6) {
+          top: 500px;
+          z-index: 300;
+          @include desktop {
+            top: 0;
+            left: 400px;
+            z-index: 800;
+          }
+        }
+        &:hover {
+          z-index: 1000;
+        }
+      }
+    }
+  }
+
+  & > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 240px;
+    border: 2px solid $color-border;
+    justify-content: center;
+
+    @include desktop {
+      width: 260px;
+    }
+    & > h3 {
+      color: $color-header;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0 0 0;
+      & > p {
+        font-size: 1.2em;
+        font-weight: bold;
+
+        height: 25px;
+      }
+    }
+  }
+}
