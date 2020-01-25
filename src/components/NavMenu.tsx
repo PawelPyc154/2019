@@ -11,7 +11,7 @@ const NavMenu: React.SFC<NavMenuProps> = ({ navLinks }) => {
     <nav className="NavMenu">
       <ul>
         {navLinks.map(navLink => (
-          <NavLink to={navLink.navLinkPath} activeClassName="activeLinkMenu">
+          <NavLink to={navLink.navLinkPath} activeClassName="activeLinkMenu" key={navLink.navLinkName}>
             <li>{navLink.navLinkName}</li>
           </NavLink>
         ))}

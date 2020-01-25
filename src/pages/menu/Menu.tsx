@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route } from 'react-router';
+import React, { useEffect } from 'react';
+import { Route, useHistory } from 'react-router';
 import FirstSection from '../../components/FirstSection';
 import Article from '../../components/Article';
 import NavMenu from '../../components/NavMenu';
@@ -15,6 +15,11 @@ const Layer11 = require('../../images/home/Layer_11.png');
 export interface MenuProps {}
 
 const Menu: React.SFC<MenuProps> = () => {
+  const history = useHistory();
+  useEffect(() => {
+    history.push('/menu/lunch');
+  }, [history]);
+
   const data = {
     firstSection: {
       name: 'menu',

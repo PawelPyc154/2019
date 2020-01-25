@@ -53,7 +53,7 @@ const NavLinks: React.SFC<NavLinksProps> = ({ setIsOpen, setFreatures, fontColor
         <ol>About</ol>
       </NavLink>
       <NavLink
-        to="/menu/lunch"
+        to="/menu"
         activeClassName="activeLink"
         onClick={() => {
           setIsOpen(false);
@@ -88,8 +88,7 @@ const NavLinks: React.SFC<NavLinksProps> = ({ setIsOpen, setFreatures, fontColor
         </button>
       </ol>
       <NavLink
-        to="/shop/allproducts"
-        exact
+        to="/shop"
         activeClassName="activeLink"
         onClick={() => {
           setIsOpen(false);

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router';
 import FirstSection from '../../components/FirstSection';
 import NavMenu from '../../components/NavMenu';
 
@@ -7,6 +8,11 @@ const bg = require('../../images/shop/bg.png');
 export interface ShopProps {}
 
 const Shop: React.SFC<ShopProps> = () => {
+  const history = useHistory();
+  useEffect(() => {
+    history.push('/shop/allproducts');
+  }, [history]);
+
   const data = {
     firstSection: {
       name: 'shop',
@@ -37,7 +43,6 @@ const Shop: React.SFC<ShopProps> = () => {
   return (
     <>
       <FirstSection data={data.firstSection} />
-
       <NavMenu navLinks={data.navLinks} />
     </>
   );
