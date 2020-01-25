@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router';
 import FirstSection from '../../components/FirstSection';
 import Article from '../../components/Article';
-import NavMenu from './components/NavMenu';
+import NavMenu from '../../components/NavMenu';
 
 import Lunch from './components/Lunch';
 import Breakfast from './components/Breakfast';
@@ -30,13 +30,31 @@ const Menu: React.SFC<MenuProps> = () => {
       image: Layer10,
       image2: Layer11,
     },
+    navLinks: [
+      {
+        navLinkName: 'BREAKFAST',
+        navLinkPath: '/menu/breakfast',
+      },
+      {
+        navLinkName: 'LUNCH',
+        navLinkPath: '/menu/lunch',
+      },
+      {
+        navLinkName: 'DRINKS',
+        navLinkPath: '/menu/drink',
+      },
+      {
+        navLinkName: 'DESSERTS',
+        navLinkPath: '/menu/desserts',
+      },
+    ],
   };
 
   return (
     <>
       <FirstSection data={data.firstSection} />
       <Article data={data.discover} />
-      <NavMenu />
+      <NavMenu navLinks={data.navLinks} />
       <Route path="/menu/breakfast" exact component={Breakfast} />
       <Route path="/menu/lunch" exact component={Lunch} />
       <Route path="/menu/drink" exact component={Breakfast} />

@@ -88,7 +88,7 @@ const NavLinks: React.SFC<NavLinksProps> = ({ setIsOpen, setFreatures, fontColor
         </button>
       </ol>
       <NavLink
-        to="/shop"
+        to="/shop/allproducts"
         exact
         activeClassName="activeLink"
         onClick={() => {

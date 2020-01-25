@@ -2,5 +2,5 @@
 
 Strona na podstawie szablonu https://www.behance.net/gallery/35481315/Renome-Free-PSD-Restaurant-Template
 
-
-Do poprawy nieczytelne stylowanie.
+in progress...
+Do poprawy nieczytelne stylowanie (aktualnie migracja z styled-components do scss).

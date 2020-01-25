@@ -19,7 +19,7 @@ const Pages: React.SFC<PagesProps> = () => (
     <Route path="/contact" exact component={Contact} />
     <Route path="/reservations" exact component={Reservations} />
     <Route path="/blog" exact component={Blog} />
-    <Route path="/shop" exact component={Shop} />
+    <Route path="/shop" component={Shop} />
   </Switch>
 );
 
