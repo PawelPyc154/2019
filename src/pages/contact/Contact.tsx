@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Happy from './sections/Happy';
-import Details from './sections/Details';
-import FormWriteMessage from './sections/FormWriteMessage';
+import Happy from './components/Happy';
+import Details from './components/Details';
+import FormWriteMessage from './components/FormWriteMessage';
 import FirstSection from '../../components/FirstSection';
 
 // FirstSection images

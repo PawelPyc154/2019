@@ -1,11 +1,11 @@
 import React from 'react';
-import ForYou from './sections/ForYou';
+import ForYou from './components/ForYou';
 
-import Lunch from './sections/Lunch';
-import Remantic from './sections/Remantic';
-import Reservation from './sections/Reservation';
-import OurServices from './sections/OurServices';
-import Blog from './sections/Blog';
+import Lunch from './components/Lunch';
+import Remantic from './components/Remantic';
+import Reservation from './components/Reservation';
+import OurServices from './components/OurServices';
+import Blog from './components/Blog';
 import Article from '../../components/Article';
 import Article2 from '../../components/Article2';
 // Article2 images

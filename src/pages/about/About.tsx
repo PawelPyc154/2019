@@ -2,7 +2,7 @@ import React from 'react';
 import FirstSection from '../../components/FirstSection';
 import Article2 from '../../components/Article2';
 import Article from '../../components/Article';
-import OpeningHouse from './sections/OpaningHouse';
+import OpeningHouse from './components/OpaningHouse';
 
 // FirstSection images
 const Layer19 = require('../../images/contact/Layer_19.png');
