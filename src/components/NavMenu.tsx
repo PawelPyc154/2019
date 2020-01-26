@@ -9,8 +9,6 @@ export interface NavMenuProps {
 }
 
 const NavMenu: React.SFC<NavMenuProps> = ({ navLinks, activePageReset }) => {
-  console.log(activePageReset);
-
   return (
     <nav className="NavMenu">
       <ul>

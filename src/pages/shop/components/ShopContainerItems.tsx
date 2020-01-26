@@ -39,19 +39,25 @@ const ShopContainerItems: React.SFC<ShopContainerItemsProps> = ({ activePage }) 
     const type = location.pathname.slice(6);
     if (type !== 'allproducts') {
       setMealsProps(meals.filter(item => item.type === type));
+      // setPages(Math.ceil(mealsProps.length / 6));
+      // const mealsPropsCoppy = [...mealsProps];
+      // setmealss(mealsPropsCoppy.splice((active - 1) * 6, 6));
     } else {
       setMealsProps(meals);
+      // setPages(Math.ceil(mealsProps.length / 6));
+      // const mealsPropsCoppy = [...mealsProps];
+      // setmealss(mealsPropsCoppy.splice((active - 1) * 6, 6));
     }
   }, [location]);
 
-  useEffect(() => {
-    setPages(Math.ceil(mealsProps.length / 6));
-  }, [mealsProps]);
+  // useEffect(() => {}, [mealsProps]);
 
   useEffect(() => {
+    setPages(Math.ceil(mealsProps.length / 6));
     const mealsPropsCoppy = [...mealsProps];
     setmealss(mealsPropsCoppy.splice((active - 1) * 6, 6));
-  }, [active]);
+  }, [active, mealsProps]);
+  // console.log(mealss);
 
   return (
     <>
