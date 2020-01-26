@@ -14,7 +14,7 @@ const Scroll = (scrollRef: any, y: number = 1): boolean | number => {
     } else {
       setflag(true);
     }
-  }, [scrollY]);
+  }, [scrollY, scrollRef, y]);
 
   return flag;
 };

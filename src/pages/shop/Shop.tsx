@@ -1,14 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import FirstSection from '../../components/FirstSection';
 import NavMenu from '../../components/NavMenu';
 import ShopContainerItems from './components/ShopContainerItems';
+// import Pagination from '../../components/Pagination';
 
 const bg = require('../../images/shop/bg.png');
 
 export interface ShopProps {}
 
 const Shop: React.SFC<ShopProps> = () => {
+  const [active, setActive] = useState(1);
+
   const history = useHistory();
   useEffect(() => {
     history.push('/shop/allproducts');
@@ -44,8 +47,8 @@ const Shop: React.SFC<ShopProps> = () => {
   return (
     <>
       <FirstSection data={data.firstSection} />
-      <NavMenu navLinks={data.navLinks} />
-      <ShopContainerItems />
+      <NavMenu navLinks={data.navLinks} activePageReset={setActive} />
+      <ShopContainerItems activePage={{ active, setActive }} />
     </>
   );
 };

@@ -4,14 +4,23 @@ import './NavMenu.scss';
 
 export interface NavMenuProps {
   navLinks: { navLinkName: string; navLinkPath: string }[];
+
+  activePageReset: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const NavMenu: React.SFC<NavMenuProps> = ({ navLinks }) => {
+const NavMenu: React.SFC<NavMenuProps> = ({ navLinks, activePageReset }) => {
+  console.log(activePageReset);
+
   return (
     <nav className="NavMenu">
       <ul>
         {navLinks.map(navLink => (
-          <NavLink to={navLink.navLinkPath} activeClassName="activeLinkMenu" key={navLink.navLinkName}>
+          <NavLink
+            to={navLink.navLinkPath}
+            activeClassName="activeLinkMenu"
+            key={navLink.navLinkName}
+            onClick={() => activePageReset(1)}
+          >
             <li>{navLink.navLinkName}</li>
           </NavLink>
         ))}

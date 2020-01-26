@@ -6,7 +6,7 @@ import './ShopItem.scss';
 const img = require('../images/ChickenLivers.png');
 
 export interface ShopItemProps {
-  shopItem: { imagePath: string; title: string; cost: string };
+  shopItem: { type: string; imagePath: string; title: string; cost: string };
 }
 
 const ShopItem: React.SFC<ShopItemProps> = ({ shopItem }) => {

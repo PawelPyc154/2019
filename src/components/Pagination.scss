@@ -1,0 +1,42 @@
+@import '../state/style/variables';
+
+.pagination {
+  width: auto;
+  max-width: 1230px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__btn {
+    background-color: transparent;
+    border: none;
+    &__arrow {
+      font-size: 5em;
+    }
+  }
+
+  &__pageLinks {
+    font-size: 2em;
+    &__btn {
+      margin: 10px 10px;
+      font-size: 1em;
+      color: $color-primary-font;
+      background-color: transparent;
+      border: none;
+      width: 30px;
+      height: 50px;
+      cursor: pointer;
+      @include tablet-small {
+        margin: 10px 20px;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
+.activeLinkMenu {
+  color: $color-active-nav !important;
+}

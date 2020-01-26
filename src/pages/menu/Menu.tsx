@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, useHistory } from 'react-router';
 import FirstSection from '../../components/FirstSection';
 import Article from '../../components/Article';
@@ -55,11 +55,13 @@ const Menu: React.SFC<MenuProps> = () => {
     ],
   };
 
+  const [, setActive] = useState(1);
+
   return (
     <>
       <FirstSection data={data.firstSection} />
       <Article data={data.discover} />
-      <NavMenu navLinks={data.navLinks} />
+      <NavMenu navLinks={data.navLinks} activePageReset={setActive} />
       <Route path="/menu/breakfast" exact component={Breakfast} />
       <Route path="/menu/lunch" exact component={Lunch} />
       <Route path="/menu/drink" exact component={Breakfast} />
