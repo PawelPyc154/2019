@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router';
 import FirstSection from '../../components/FirstSection';
 import NavMenu from '../../components/NavMenu';
+import ShopContainerItems from './components/ShopContainerItems';
 
 const bg = require('../../images/shop/bg.png');
 
@@ -44,6 +45,7 @@ const Shop: React.SFC<ShopProps> = () => {
     <>
       <FirstSection data={data.firstSection} />
       <NavMenu navLinks={data.navLinks} />
+      <ShopContainerItems />
     </>
   );
 };
