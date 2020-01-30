@@ -1,0 +1,66 @@
+@import '../../../state/style/variables';
+
+.ProductView {
+  width: auto;
+  max-width: 1230px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+  flex-direction: column;
+  @include desktop {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  &__article {
+    @include desktop {
+      margin-left: 50px;
+    }
+
+    &__header {
+      font-size: 2.5em;
+      margin: 30px 0;
+    }
+
+    &__h5 {
+      font-size: 2.5em;
+      color: $color-header;
+      font-weight: normal;
+      display: block;
+    }
+
+    &__text {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+
+    &__input {
+      font-size: 2.5em;
+      width: 70px;
+      border: none;
+      border-bottom: 3px solid $color-btn;
+      justify-content: center;
+      height: 50px;
+
+      text-align: center;
+      margin: 0 20px 0 0;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__btn {
+      font-size: 1.2em;
+      background-color: $color-btn;
+      color: $color-secondary-font;
+      width: 180px;
+      height: 50px;
+      border: none;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}

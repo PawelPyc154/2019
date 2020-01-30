@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, Route } from 'react-router';
 import FirstSection from '../../components/FirstSection';
 import NavMenu from '../../components/NavMenu';
 import ShopContainerItems from './components/ShopContainerItems';
+import ProductView from './components/ProductView';
 // import Pagination from '../../components/Pagination';
 
 const bg = require('../../images/shop/bg.png');
@@ -14,7 +15,7 @@ const Shop: React.SFC<ShopProps> = () => {
 
   const history = useHistory();
   useEffect(() => {
-    history.push('/shop/allproducts');
+    history.push('/shop/meals/allproducts');
   }, [history]);
 
   const data = {
@@ -27,19 +28,19 @@ const Shop: React.SFC<ShopProps> = () => {
     navLinks: [
       {
         navLinkName: 'ALL PRODUCTS ',
-        navLinkPath: '/shop/allproducts',
+        navLinkPath: '/shop/meals/allproducts',
       },
       {
         navLinkName: 'MAINS',
-        navLinkPath: '/shop/mains',
+        navLinkPath: '/shop/meals/mains',
       },
       {
         navLinkName: 'BREAKFAST',
-        navLinkPath: '/shop/breakfast',
+        navLinkPath: '/shop/meals/breakfast',
       },
       {
         navLinkName: 'DESSERTS',
-        navLinkPath: '/shop/desserts',
+        navLinkPath: '/shop/meals/desserts',
       },
     ],
   };
@@ -47,8 +48,15 @@ const Shop: React.SFC<ShopProps> = () => {
   return (
     <>
       <FirstSection data={data.firstSection} />
-      <NavMenu navLinks={data.navLinks} activePageReset={setActive} />
-      <ShopContainerItems activePage={{ active, setActive }} />
+
+      <Route path="/shop/meals">
+        <NavMenu navLinks={data.navLinks} activePageReset={setActive} />
+        <ShopContainerItems activePage={{ active, setActive }} />
+      </Route>
+
+      <Route path="/shop/meal/:id">
+        <ProductView />
+      </Route>
     </>
   );
 };
