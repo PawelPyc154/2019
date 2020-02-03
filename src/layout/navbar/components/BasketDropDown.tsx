@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 
 export interface BasketDropDownProps {
   basketOpen: boolean;
+  setBasketOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const BasketDropDown: React.SFC<BasketDropDownProps> = ({ basketOpen }) => (
+const BasketDropDown: React.SFC<BasketDropDownProps> = ({ basketOpen, setBasketOpen }) => (
   <Styled
     animate={basketOpen ? 'basketOpen' : 'basketClose'}
     variants={{
@@ -17,11 +18,11 @@ const BasketDropDown: React.SFC<BasketDropDownProps> = ({ basketOpen }) => (
   >
     <ul>
       <li>$44.50</li>
-      <NavLink to="/shop/ViewCart" exact activeClassName="activeLink">
+      <NavLink to="/shop/ViewCart" exact activeClassName="activeLink" onClick={() => setBasketOpen(!basketOpen)}>
         <li>View Cart</li>
       </NavLink>
 
-      <NavLink to="/" exact activeClassName="activeLink">
+      <NavLink to="/" exact activeClassName="activeLink" onClick={() => setBasketOpen(!basketOpen)}>
         <li>Checkout</li>
       </NavLink>
     </ul>

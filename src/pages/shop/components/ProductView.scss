@@ -50,16 +50,4 @@
       outline: none;
     }
   }
-
-  &__btn {
-    font-size: 1.2em;
-    background-color: $color-btn;
-    color: $color-secondary-font;
-    width: 180px;
-    height: 50px;
-    border: none;
-    &:hover {
-      opacity: 0.9;
-    }
-  }
 }

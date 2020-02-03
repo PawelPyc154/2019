@@ -44,6 +44,9 @@ h5 {
   font-weight: 400;
   letter-spacing: 3px;
 }
+h6 {
+  font-size: 1.4em;
+}
 p {
   font-size: 1.2em;
   letter-spacing: 1px;
@@ -77,5 +80,17 @@ li {
   & > ol,
   li {
     color: $color-active-nav !important;
+  }
+}
+
+.button {
+  font-size: 1.2em;
+  background-color: $color-btn;
+  color: $color-secondary-font;
+  width: 180px;
+  height: 50px;
+  border: none;
+  &:hover {
+    opacity: 0.9;
   }
 }

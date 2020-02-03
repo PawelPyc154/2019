@@ -46,7 +46,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             }}
           />
 
-          <BasketDropDown basketOpen={basketOpen} />
+          <BasketDropDown basketOpen={basketOpen} setBasketOpen={setBasketOpen} />
         </motion.nav>
       </header>
     </Styled>

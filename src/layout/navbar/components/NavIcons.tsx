@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 import HamburgerMenu from './HamburgerMenu';
+import BasketOfProductType from '../../../state/BasketOfProducts/BasketOfProduct';
 
 export interface NavIconsProps {
   state: {
@@ -16,7 +18,9 @@ export interface NavIconsProps {
 
 const NavIcons: React.SFC<NavIconsProps> = ({ state }) => {
   const { isOpen, basketOpen, setBasketOpen, setFreatures, setIsOpen, fontColor } = state;
-
+  const BasketOfProducts = useSelector(
+    (stateRedux: { BasketOfProductsReducer: BasketOfProductType[] }) => stateRedux.BasketOfProductsReducer,
+  );
   return (
     <ContainerLi fontColor={fontColor}>
       <ol>
@@ -30,7 +34,7 @@ const NavIcons: React.SFC<NavIconsProps> = ({ state }) => {
         >
           <FaShoppingCart style={{ color: fontColor }} />
         </button>
-        <div>2</div>
+        <div>{BasketOfProducts.length}</div>
       </ol>
       <ol>
         <HamburgerMenu

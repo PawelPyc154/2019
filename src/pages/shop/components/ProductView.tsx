@@ -1,19 +1,36 @@
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable global-require */
 import React, { useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
 import meals from './meals.json';
 import './ProductView.scss';
+import { setFireBase } from '../../../state/BasketOfProducts/action';
 
 export interface ProductViewProps {}
 
 const ProductView: React.SFC<ProductViewProps> = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const [input, setinput] = useState('1');
+
   const idnumber = Number(id);
 
   const product = meals.find(meal => meal.id === idnumber);
-
+  const history = useHistory();
+  const handleClick = () => {
+    if (product) {
+      dispatch(
+        setFireBase({
+          name: product?.title,
+          cost: product?.cost,
+          quantity: Number(input),
+          imagePath: product?.imagePath,
+        }),
+      );
+    }
+    history.push('/shop/ViewCart');
+  };
   return (
     <section className="ProductView">
       <figure>
@@ -37,8 +54,10 @@ const ProductView: React.SFC<ProductViewProps> = () => {
           step="1"
           value={input}
           onChange={item => setinput(item.target.value)}
+          min="1"
+          max="20"
         />
-        <button className="ProductView__btn" type="button">
+        <button className="button" type="button" onClick={() => handleClick()}>
           ADD TO CART
         </button>
       </article>

@@ -1,0 +1,17 @@
+@import '../../../../state/style/variables';
+
+.Product {
+  &__image {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+  &__name {
+  }
+  &__cost {
+    font-weight: 400;
+    font-size: 1.4em;
+  }
+}
