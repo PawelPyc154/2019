@@ -1,0 +1,11 @@
+.ProductCartList {
+  width: auto;
+  max-width: 1230px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  font-weight: bold;
+  &__Headers {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -4,6 +4,7 @@ import FirstSection from '../../components/FirstSection';
 import NavMenu from '../../components/NavMenu';
 import ShopContainerItems from './components/ShopContainerItems';
 import ProductView from './components/ProductView';
+import ViewCart from './ViewCart/ViewCart';
 // import Pagination from '../../components/Pagination';
 
 const bg = require('../../images/shop/bg.png');
@@ -54,9 +55,12 @@ const Shop: React.SFC<ShopProps> = () => {
         <ShopContainerItems activePage={{ active, setActive }} />
       </Route>
 
-      <Route path="/shop/meal/:id">
+      {/* <Route path="/shop/meal/:id">
         <ProductView />
-      </Route>
+      </Route> */}
+      <Route path="/shop/meal/:id" component={ProductView} />
+
+      <Route path="/shop/ViewCart" component={ViewCart} />
     </>
   );
 };

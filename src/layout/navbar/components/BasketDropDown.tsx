@@ -17,7 +17,7 @@ const BasketDropDown: React.SFC<BasketDropDownProps> = ({ basketOpen }) => (
   >
     <ul>
       <li>$44.50</li>
-      <NavLink to="/" exact activeClassName="activeLink">
+      <NavLink to="/shop/ViewCart" exact activeClassName="activeLink">
         <li>View Cart</li>
       </NavLink>
 

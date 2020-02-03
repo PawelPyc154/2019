@@ -20,17 +20,17 @@ const ProductView: React.SFC<ProductViewProps> = () => {
         <img src={require(`../images/${product && product.imagePath}.png`)} alt="" className="ProductView__image" />
       </figure>
       <article className="ProductView__article">
-        <h3 className="ProductView__article__header">{product && product.title}</h3>
-        <h5 className="ProductView__article__h5">{product && `$${product.cost}`}</h5>
+        <h3 className="ProductView__header">{product && product.title}</h3>
+        <h5 className="ProductView__h5">{product && `$${product.cost}`}</h5>
 
-        <p className="ProductView__article__text">
+        <p className="ProductView__text">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed ad facilis perspiciatis magnam praesentium
           libero voluptates itaque ut laboriosam, repellat earum mollitia! Ipsa inventore magnam incidunt facilis nisi,
           a ullam!
         </p>
 
         <input
-          className="ProductView__article__input"
+          className="ProductView__input"
           type="number"
           name=""
           id=""
@@ -38,7 +38,7 @@ const ProductView: React.SFC<ProductViewProps> = () => {
           value={input}
           onChange={item => setinput(item.target.value)}
         />
-        <button className="ProductView__article__btn" type="button">
+        <button className="ProductView__btn" type="button">
           ADD TO CART
         </button>
       </article>
