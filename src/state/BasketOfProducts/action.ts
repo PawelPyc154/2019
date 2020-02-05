@@ -3,6 +3,7 @@ import {
   ADD_PRODUCT_TO_BASKET,
   REMOVE_PRODUCT_FROM_BASKET,
   UPDATE_PRODUCT_QUANTITY,
+  LOAD_PRODUCTS,
 } from './actionType';
 import BasketOfProduct from './BasketOfProduct';
 
@@ -11,14 +12,19 @@ export const addProductToBasket = (value: BasketOfProduct): BasketOfProductActio
   type: ADD_PRODUCT_TO_BASKET,
   payload: value,
 });
-export const removeProductFromBasket = (Productname: string): BasketOfProductActionTypes => ({
+export const removeProductFromBasket = (productname: string): BasketOfProductActionTypes => ({
   type: REMOVE_PRODUCT_FROM_BASKET,
-  payload: Productname,
+  payload: productname,
 });
 export const updateProductQuantity = (
-  Productname: string,
-  ProductQuantityValue: number,
+  productname: string,
+  productQuantityValue: number,
 ): BasketOfProductActionTypes => ({
   type: UPDATE_PRODUCT_QUANTITY,
-  payload: { Productname, ProductQuantityValue },
+  payload: { productname, productQuantityValue },
+});
+
+export const loadProducts = (products: BasketOfProduct[]): BasketOfProductActionTypes => ({
+  type: LOAD_PRODUCTS,
+  payload: products,
 });

@@ -1,8 +1,8 @@
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable global-require */
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Product.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import BasketOfProductType from '../../../../state/BasketOfProducts/BasketOfProduct';
 import { removeProductFromBasket, updateProductQuantity } from '../../../../state/BasketOfProducts/action';
 
@@ -21,6 +21,14 @@ const Product: React.SFC<ProductProps> = ({ data }) => {
   const handleUpdateQuantity = (Productname: string, value: string) => {
     dispatch(updateProductQuantity(Productname, Number(value)));
   };
+
+  const BasketOfProducts = useSelector(
+    (state: { BasketOfProductsReducer: BasketOfProductType[] }) => state.BasketOfProductsReducer,
+  );
+
+  useEffect(() => {
+    localStorage.setItem('basket', JSON.stringify(BasketOfProducts));
+  }, [BasketOfProducts]);
   return (
     <>
       <div className="Product">
@@ -41,7 +49,7 @@ const Product: React.SFC<ProductProps> = ({ data }) => {
         min="1"
         max="20"
       />
-      <div className="ProductCartList__total">{`$${Number(cost) * quantity}`}</div>
+      <div className="ProductCartList__total">{`$${(Number(cost) * quantity).toFixed(2)}`}</div>
       <button type="button" className="ProductCartList__btn" onClick={() => handleRemoveProductFromBasket(name)}>
         x
       </button>

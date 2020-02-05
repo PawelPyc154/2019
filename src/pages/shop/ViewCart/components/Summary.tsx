@@ -12,9 +12,9 @@ const Summary: React.SFC<SummaryProps> = () => {
 
   const subtotal =
     BasketOfProducts.length !== 0
-      ? BasketOfProducts?.map(BasketOfProduct => Number(BasketOfProduct.cost) * BasketOfProduct.quantity).reduce(
-          (a, b) => a + b,
-        )
+      ? BasketOfProducts?.map(BasketOfProduct => Number(BasketOfProduct.cost) * BasketOfProduct.quantity)
+          .reduce((a, b) => a + b)
+          .toFixed(2)
       : 0;
 
   return (

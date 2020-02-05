@@ -18,6 +18,7 @@ const ProductView: React.SFC<ProductViewProps> = () => {
 
   const product = meals.find(meal => meal.id === idnumber);
   const history = useHistory();
+
   const handleClick = () => {
     if (product) {
       dispatch(
@@ -29,6 +30,7 @@ const ProductView: React.SFC<ProductViewProps> = () => {
         }),
       );
     }
+
     history.push('/shop/ViewCart');
   };
   return (

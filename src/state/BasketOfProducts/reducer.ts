@@ -3,24 +3,12 @@ import {
   ADD_PRODUCT_TO_BASKET,
   REMOVE_PRODUCT_FROM_BASKET,
   UPDATE_PRODUCT_QUANTITY,
+  LOAD_PRODUCTS,
 } from './actionType';
 
 import BasketOfProduct from './BasketOfProduct';
 
-const initialState: BasketOfProduct[] = [
-  {
-    name: 'Steak with vegetables',
-    cost: 25,
-    quantity: 2,
-    imagePath: 'ChickenLivers',
-  },
-  {
-    name: 'eeegdfg',
-    cost: 10,
-    quantity: 1,
-    imagePath: 'EggBaguette',
-  },
-];
+const initialState: BasketOfProduct[] = [];
 
 const BasketOfProductsReducer = (state = initialState, action: BasketOfProductActionTypes): BasketOfProduct[] => {
   switch (action.type) {
@@ -37,17 +25,18 @@ const BasketOfProductsReducer = (state = initialState, action: BasketOfProductAc
     case REMOVE_PRODUCT_FROM_BASKET:
       return state.filter(item => item.name !== action.payload);
     case UPDATE_PRODUCT_QUANTITY:
-      if (action.payload.ProductQuantityValue <= 20 && action.payload.ProductQuantityValue >= 1) {
+      if (action.payload.productQuantityValue <= 20 && action.payload.productQuantityValue >= 1) {
         return state.map(item => {
-          if (item.name !== action.payload.Productname) {
+          if (item.name !== action.payload.productname) {
             return { ...item };
           }
 
-          return { ...item, quantity: action.payload.ProductQuantityValue };
+          return { ...item, quantity: action.payload.productQuantityValue };
         });
       }
       return state;
-
+    case LOAD_PRODUCTS:
+      return action.payload;
     default:
       return state;
   }
