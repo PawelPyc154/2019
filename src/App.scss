@@ -87,10 +87,29 @@ li {
   font-size: 1.2em;
   background-color: $color-btn;
   color: $color-secondary-font;
-  width: 180px;
+  padding: 0 50px;
   height: 50px;
   border: none;
   &:hover {
     opacity: 0.9;
   }
+}
+
+.inputQuantity {
+  font-size: 2.5em;
+  width: 70px;
+  border: none;
+  border-bottom: 3px solid $color-btn;
+  justify-content: center;
+  height: 50px;
+
+  text-align: center;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.colorSecondary {
+  color: $color-header;
 }

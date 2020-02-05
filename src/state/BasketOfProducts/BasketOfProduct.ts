@@ -1,6 +1,6 @@
 export default interface BasketOfProduct {
   name: string;
-  cost: string;
+  cost: number;
   quantity: number;
   imagePath: string;
 }

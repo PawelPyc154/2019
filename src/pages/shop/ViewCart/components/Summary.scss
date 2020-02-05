@@ -1,0 +1,37 @@
+@import '../../../../state/style/variables';
+
+.Summary {
+  margin: 0 auto;
+  width: auto;
+  max-width: 1230px;
+  padding: 5px;
+  &__container {
+    width: auto;
+    max-width: 460px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+
+  &__calculate {
+    margin-left: auto;
+  }
+  &__name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  &__button {
+    display: block;
+    margin: 50px auto;
+    width: auto;
+
+    @include desktop {
+      width: initial;
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__value {
+    font-size: 2em;
+  }
+}

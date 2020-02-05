@@ -5,7 +5,7 @@ import { useParams, useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import meals from './meals.json';
 import './ProductView.scss';
-import { setFireBase } from '../../../state/BasketOfProducts/action';
+import { addProductToBasket } from '../../../state/BasketOfProducts/action';
 
 export interface ProductViewProps {}
 
@@ -21,7 +21,7 @@ const ProductView: React.SFC<ProductViewProps> = () => {
   const handleClick = () => {
     if (product) {
       dispatch(
-        setFireBase({
+        addProductToBasket({
           name: product?.title,
           cost: product?.cost,
           quantity: Number(input),
@@ -47,7 +47,7 @@ const ProductView: React.SFC<ProductViewProps> = () => {
         </p>
 
         <input
-          className="ProductView__input"
+          className="inputQuantity ProductView__input"
           type="number"
           name=""
           id=""

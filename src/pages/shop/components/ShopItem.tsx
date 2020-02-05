@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const img = require('../images/ChickenLivers.png');
 
 export interface ShopItemProps {
-  shopItem: { id: number; type: string; imagePath: string; title: string; cost: string };
+  shopItem: { id: number; type: string; imagePath: string; title: string; cost: number };
 }
 
 const ShopItem: React.SFC<ShopItemProps> = ({ shopItem }) => {

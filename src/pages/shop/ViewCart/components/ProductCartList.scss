@@ -1,11 +1,52 @@
+@import '../../../../state/style/variables';
+
 .ProductCartList {
   width: auto;
   max-width: 1230px;
   margin: 0 auto;
   font-size: 1.2em;
   font-weight: bold;
-  &__Headers {
-    display: flex;
-    justify-content: space-between;
+  padding: 5px;
+
+  &__headers {
+    display: grid;
+    grid-template-columns: 1.9fr 1fr 1fr 50px;
+    margin: 10px 0 40px;
+  }
+
+  &__qty {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__quantity {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1.9fr 1fr 1fr 50px;
+    align-items: center;
+    // justify-content: space-between;
+    margin: 30px 0;
+  }
+
+  &__total {
+    font-size: 2em;
+    font-weight: normal;
+  }
+
+  &__btn {
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 2em;
+    width: 50px;
+    height: 50px;
   }
 }

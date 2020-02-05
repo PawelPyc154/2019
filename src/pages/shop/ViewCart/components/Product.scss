@@ -1,11 +1,13 @@
 @import '../../../../state/style/variables';
 
 .Product {
+  display: flex;
   &__image {
     display: none;
 
     @include desktop {
       display: block;
+      width: 80px;
     }
   }
   &__name {
@@ -13,5 +15,11 @@
   &__cost {
     font-weight: 400;
     font-size: 1.4em;
+  }
+
+  &__container {
+    @include desktop {
+      margin: 10px 0 0 30px;
+    }
   }
 }

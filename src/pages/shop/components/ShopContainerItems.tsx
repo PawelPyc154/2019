@@ -11,7 +11,7 @@ export interface ShopContainerItemsProps {
 }
 
 const ShopContainerItems: React.SFC<ShopContainerItemsProps> = ({ activePage }) => {
-  type mealsTypes = { id: number; type: string; imagePath: string; title: string; cost: string }[];
+  type mealsTypes = { id: number; type: string; imagePath: string; title: string; cost: number }[];
 
   const location = useLocation();
 
