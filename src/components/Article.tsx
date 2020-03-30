@@ -3,7 +3,8 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import Scroll from '../middleware/Scroll';
+import useScroll from '../middleware/useScroll';
+
 import './Article.scss';
 
 export interface ArticleProps {
@@ -31,7 +32,7 @@ const Article: React.FC<ArticleProps> = ({ data }) => {
   };
 
   return (
-    <motion.section className="article" ref={scrollRef} animate={Scroll(scrollRef) ? 'start' : 'end'}>
+    <motion.section className="article" ref={scrollRef} animate={useScroll(scrollRef) ? 'start' : 'end'}>
       <figure>
         <motion.img src={image} variants={variable.firstImage} />
         <motion.img src={image2} variants={variable.secondImage} />

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { style1, style1Type } from '../../../state/style/style1';
-import Scroll from '../../../middleware/Scroll';
+import useScroll from '../../../middleware/useScroll';
 
 const Layer30 = require('../../../images/home/Layer_30.png');
 const Layer31 = require('../../../images/home/Layer_31.png');
@@ -14,7 +14,7 @@ export interface ReservationProps {}
 const Reservation: React.FC<ReservationProps> = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   return (
-    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
+    <Section ref={scrollRef} styled={style1} animate={useScroll(scrollRef, 1) ? 'start' : 'end'}>
       <figure>
         <motion.img
           src={Layer30}

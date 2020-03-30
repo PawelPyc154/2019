@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { style1Type, style1 } from '../../../state/style/style1';
-import Scroll from '../../../middleware/Scroll';
+import useScroll from '../../../middleware/useScroll';
 
 const Layer29 = require('../../../images/home/Layer_29.png');
 
@@ -11,11 +11,10 @@ export interface RemanticProps {}
 const Remantic: React.SFC<RemanticProps> = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   return (
-    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
+    <Section ref={scrollRef} styled={style1} animate={useScroll(scrollRef, 1) ? 'start' : 'end'}>
       <motion.figure
         variants={{
           start: { y: 0, transition: { duration: 1, ease: 'linear' } },
-
           end: { y: '1000px', transition: { duration: 0, ease: 'linear' } },
         }}
       >
@@ -25,7 +24,6 @@ const Remantic: React.SFC<RemanticProps> = () => {
       <motion.article
         variants={{
           start: { y: 0, transition: { duration: 1, ease: 'linear' } },
-
           end: { y: '-1000px', transition: { duration: 0, ease: 'linear' } },
         }}
       >

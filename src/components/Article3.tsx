@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import Scroll from '../middleware/Scroll';
+import useScroll from '../middleware/useScroll';
 import './Article3.scss';
 
 export interface Article3Props {
@@ -36,7 +36,7 @@ const Article3: React.FC<Article3Props> = ({ data }) => {
 
   const scrollRef = useRef<HTMLDivElement>(null);
   return (
-    <motion.section ref={scrollRef} className="Article3" animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
+    <motion.section ref={scrollRef} className="Article3" animate={useScroll(scrollRef, 1) ? 'start' : 'end'}>
       <figure>
         <motion.img src={image} alt="" variants={variable.firstImage} />
         <motion.img src={image2} alt="" variants={variable.secondImage} />

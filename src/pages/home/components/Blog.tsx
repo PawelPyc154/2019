@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { style1Type, style1 } from '../../../state/style/style1';
-import Scroll from '../../../middleware/Scroll';
+import useScroll from '../../../middleware/useScroll';
 
 const img326x326pxb = require('../../../images/home/img_326_x_326_px_b.png');
 const img326x326pxbv = require('../../../images/home/img_326_x_326_px_bv.png');
@@ -15,7 +15,7 @@ export interface BlogProps {}
 const Blog: React.SFC<BlogProps> = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   return (
-    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
+    <Section ref={scrollRef} styled={style1} animate={useScroll(scrollRef, 1) ? 'start' : 'end'}>
       <motion.h2
         variants={{
           start: { x: 0, transition: { duration: 1, ease: 'linear' } },

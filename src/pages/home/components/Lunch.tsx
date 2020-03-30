@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { style1Type, style1 } from '../../../state/style/style1';
-import Scroll from '../../../middleware/Scroll';
+import useScroll from '../../../middleware/useScroll';
 
 const ID600x400px = require('../../../images/home/ID600x400px.png');
 const ID560x373px = require('../../../images/home/ID560x373px.png');
@@ -18,7 +18,7 @@ const Lunch: React.SFC<LunchProps> = () => {
   return (
     <Section ref={scrollRef} styled={style1}>
       <motion.article
-        animate={Scroll(scrollRef, 1) ? 'start' : 'end'}
+        animate={useScroll(scrollRef, 1) ? 'start' : 'end'}
         variants={{
           start: { y: 0, transition: { duration: 2, ease: 'linear' } },
 

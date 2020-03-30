@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { motion } from 'framer-motion';
 import { style1, style1Type } from '../../../state/style/style1';
-import Scroll from '../../../middleware/Scroll';
+import useScroll from '../../../middleware/useScroll';
 
 const Layer15 = require('../../../images/home/Layer_15.png');
 const Layer18 = require('../../../images/home/Layer_18.png');
@@ -14,7 +14,7 @@ const Happy: React.FC<HappyProps> = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef) ? 'start' : 'end'}>
+    <Section ref={scrollRef} styled={style1} animate={useScroll(scrollRef) ? 'start' : 'end'}>
       <figure>
         <motion.img
           src={Layer15}

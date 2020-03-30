@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { style1Type, style1 } from '../../../state/style/style1';
 
-import Scroll from '../../../middleware/Scroll';
+import useScroll from '../../../middleware/useScroll';
 
 const img1920x200px = require('../../../images/home/img__1920x200px.png');
 
@@ -12,7 +12,7 @@ export interface OurServicesProps {}
 const OurServices: React.SFC<OurServicesProps> = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   return (
-    <Section ref={scrollRef} styled={style1} animate={Scroll(scrollRef, 1) ? 'start' : 'end'}>
+    <Section ref={scrollRef} styled={style1} animate={useScroll(scrollRef, 1) ? 'start' : 'end'}>
       <motion.h2
         variants={{
           start: { y: 0, transition: { duration: 1, ease: 'linear' } },
