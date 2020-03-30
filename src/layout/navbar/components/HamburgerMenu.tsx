@@ -38,11 +38,8 @@ export default HamburgerMenu;
 
 const Button = styled.button`
   display: flex;
-  /* top: 10px;
-  right: 10px; */
 
   height: 50px;
-  /* margin-right: 20px; */
 
   justify-content: center;
   align-items: center;
@@ -50,7 +47,7 @@ const Button = styled.button`
   border: 0;
   cursor: pointer;
   background-color: transparent;
-  /* background-color: red; */
+
   @media screen and (min-width: 1000px) {
     display: none;
   }

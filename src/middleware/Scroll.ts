@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Scroll = (scrollRef: any, y: number = 1): boolean | number => {
+const Scroll = (scrollRef: any, y: number = 1): boolean => {
   const [scrollY, setScrollY] = useState(0);
   const [flag, setflag] = useState(false);
 
